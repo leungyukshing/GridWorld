@@ -27,7 +27,7 @@ java HelloWorld
 &emsp;&emsp;在java语法方面，因为有C的基础，所以大多数的语法是没有问题的。所以入门的难度不大。然而两者之间还是有一定的区别。Java的package、interface、GC是相比起C++而言更具优势的地方，在设计的结构和形式上会有略微的不同，但总的来说相差不大。
 
 &emsp;&emsp;这是我的calculator小程序的运行截图：
-
+![calculator运行截图](https://github.com/leungyukshing/GridWorld/blob/master/Part1/Images/calculator.png)
 
 ## Ant
 &emsp;&emsp;同样地，Ant也是云平台已经安装并配置好的，不需要自己配置。如果需要自己配置，也可以直接通过包管理的方法，在命令行输入
@@ -47,6 +47,9 @@ sudo apt-get install ant
 
 &emsp;&emsp;执行的方法很简单，在一个项目文件下创建自己的ant文件，一般命名为`build.xml`，然后在命令行中输入`ant`命令就可以了。在自学的过程中，我尝试用ant命令编译和运行`HelloWorld.java`，但是一直都只是编译成功，在控制台没有输出"HelloWorld"，后来自己检查了一下`build.xml`文件后发现，是`project`中的**default**写错了。这里的**default**可以简单地理解为我最终要做的事情，通过找到名为**default**属性字段的**target**，根据其**depends**依赖关系，一层一层地往上找。因此，我就需要把最后一步运行的命令设置是**default**，修改完成后运行成功。
 
+为`HelloWorld.java`编写了测试类，运行`ant`命令后结果：
+![](https://github.com/leungyukshing/GridWorld/blob/master/Part1/Images/ant.png)
+
 ## Junit
 &emsp;&emsp;相比起Ant的学习，Junit的自学比较简单。首先我说一下我对Junit的理解。它用于项目的单元测试。之前我们写的测试类有很大的麻烦，一是测试类必须继承TestCase，二是测试的方法必须以test开头，对于一个比较大的类而言，编写一个测试类是很麻烦的，因此我们使用Junit。Junit允许程序员使用`@Test`来描述测试的数据。我们可以使用`assertEquals()`对输出结果进行判定。如果符合预期输出，则输出true，否则报错。
 
@@ -60,4 +63,7 @@ java -classpath .:junit-4.10.jar -ea org.junit.runner.JUnitCore HelloWorldTest
 &emsp;&emsp;同时我也可以将junit写在`build.xml`中，使用`ant`命令一次过实现对一个程序的编译和测试。
 
 ## Sonar
-&emsp;&emsp;作为一个用于代码质量管理的开源平台，Sonar可用作对代码的管理和优化。自己刚学java的时候虽然很多时候写的东西在编译上没有报错，但实际上可能结构不是那么好，或者说有很多冗余的东西，使用Sonar就可以检测出来。同时也可以用Sonar规范代码风格，如注释等。
+&emsp;&emsp;作为一个用于代码质量管理的开源平台，Sonar可用作对代码的管理和优化。自己刚学java的时候虽然很多时候写的东西在编译上没有报错，但实际上可能结构不是那么好，或者说有很多冗余的东西，使用Sonar就可以检测出来。同时也可以用Sonar规范代码风格、优化复杂度、添加注释等。
+&emsp;&emsp;我对于自己编写的`calculator.java`代码进行了检测，第一次检测的分数不高，major错误也有几个，经过仔细修改后，包括优化了一些冗余的判断语句等，成功地将major全部修复。最终的测试结果如下：
+![sonar运行](https://github.com/leungyukshing/GridWorld/blob/master/Part1/Images/sonar1.png)
+![sonar测试结果](https://github.com/leungyukshing/GridWorld/blob/master/Part1/Images/sonar.png)
