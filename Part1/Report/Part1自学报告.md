@@ -127,7 +127,41 @@ java -classpath .:junit-4.10.jar -ea org.junit.runner.JUnitCore HelloWorldTest
 
 ## Sonar
 &emsp;&emsp;作为一个用于代码质量管理的开源平台，Sonar可用作对代码的管理和优化。自己刚学java的时候虽然很多时候写的东西在编译上没有报错，但实际上可能结构不是那么好，或者说有很多冗余的东西，使用Sonar就可以检测出来。同时也可以用Sonar规范代码风格、优化复杂度、添加注释等。
-&emsp
-&emsp;&emsp;我对于自己编写的`calculator.java`代码进行了检测，第一次检测的分数不高，major错误也有几个，其中有变量命名的风格问题，也有单个函数复杂度过高的问题。经过仔细修改后，包括优化了一些冗余的判断语句等，成功地将major全部修复。最终的测试结果如下：
+&emsp;&emsp;在配置Sonar服务的环境变量时，通过修改`~/.bashrc`将环境变量添加进去。命令行输入：
+```
+vim ~/.bashrc
+```
+然后添加变量：
+![sonar环境变量](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/sonar2.png)
+然后在命令行加载变量，完成配置：
+```
+source /etc/profile
+```
+&emsp;&emsp;Sonar是一项服务，这意味着我们每次使用它的时候都需要启动服务，命令有三条：
+```
+./sonar.sh start   启动服务
+./sonar.sh stop    停止服务
+./sonar.sh restart 重启服务
+```
+
+&emsp;&emsp;然后我们就可以编写`sonar-project.properties`配置文件，文档中给出了格式，只需要将sonar.projectKey, sonar.projectName和java-module.sonar.projectBaseDir三项的值均改为要测试的文件夹名称即可。随后在命令行中输入：
+```
+sonar-runner
+```
+
+&emsp;&emsp;我对于自己编写的`calculator.java`代码进行了检测。第一次检测的分数不高，major错误也有几个，其中有变量命名的风格问题，也有单个函数复杂度过高的问题。经过仔细修改后，包括优化了一些冗余的判断语句等，成功地将major全部修复。最终的测试结果如下：
+
+命令行显示
 ![sonar运行](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/sonar1.png)
+
+打开`http:\\localhost:9000`的显示
 ![sonar测试结果](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/sonar.png)
+
+# 小结
+&emsp;&emsp;首先我概要地说一下我对Ant, Junit, Sonar的理解。
+  + Ant是一个基于java的**生成工具**，它可以简化我们每次编译所需要输入的命令，根据每条命令之间的**依赖关系**，我们就可以通过编写一个`build.xml`文件来生成一个可执行的java程序。
+  + Junit是一个java的单元测试框架，它所做的测试是**白盒测试**，也就是通过比对输入来确定程序的正确性。它提供给程序员高效的测试框架。可以结合Ant使用。
+  + Sonar是一个代码质量管理系统，它可以从多个维度对一份代码进行各方面的分析，便于程序员对代码的风格、结构等进行优化。
+
+
+&emsp;&emsp;在不到一天之内完成了Ant, Sonar, Junit的配置和使用，也完成了检查，我对自己的学习能力还是很满意的。从一无所知，到有所了解，中间经过了不少的弯路。个人得出的经验是，首先是要多看例子，尤其是像写`build.xml`这样，上网多看一些别人写的例子，逐句理解，看多了就自然会写了。第二就是要细心，学习新知识的时候因为充满着未知，又因为有时间的限制，心情自然会有点急，但是看文档、看代码的时候要静下心来，不要错过每一个符号，就像路径中的`.`，漏了就有可能会导致整个编译的错误。第三就是在日后一定要善于运用好这些工具，就像Sonar这个服务，我觉得就很有用。一开始使用它来分析自己的一份代码，没想到一份简单的代码都被找出这么多可以改进的地方，这就说明自己平常的编程习惯还有待改进。总的来说收获很丰富，希望自己接下来能学到更多有用的东西。
