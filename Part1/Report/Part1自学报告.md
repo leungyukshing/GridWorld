@@ -6,10 +6,16 @@
 
 ## Vi/Vim
 &emsp;&emsp;大一的时候在上程序设计课程的时候就已经接触过Vim这款编辑器，它是一款Linux系统下的常见代码编辑器，可以支持直接在命令行中编辑文本，但是它的界面相比起其他编辑器如sublime text或者Atom等，没有相关的语法高亮，同时，Vim也不支持鼠标的点击、括号的补全和换行缩进，因此从方便性来说个人不是很喜欢使用Vim。
+&emsp;&emsp;但是在某些时候，Vim的作用还是很明显的。比如说在Part1配置环境变量的时候，我需改进入一些文档去添加路径，这个时候使用命令行+Vim就很方便地直接修改，而不需要说打开图形化的Sublime修改后再保存。
 &emsp;&emsp;直接在命令行中输入`vim`可以打开Vim编辑器编辑代码，或者`vim filename`来直接打开一个已经存在的代码文件。编辑完成后，先按`Esc`，再输入`:wq`保存退出。
 
 &emsp;&emsp;命令行打开和退出Vim的操作：
-
+1. 在命令行直接输入`vim`，进入Vim编辑器界面
+![vim打开](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/vim1.png)
+2. 在vim中编写代码
+![vim编写代码](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/vim2.png)
+3. 编辑结束后，先按`Esc`，再输入`:wq`保存退出。
+![vim保存退出](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/vim3.png)
 
 ## Java
 &emsp;&emsp;本次实验的云桌面已经配好了java的开发环境，因此不需要自己配置。在大一的寒假，我自学了一部分java的知识，在windows平台上也配置过java的开发环境，主要分为两步：
@@ -27,7 +33,7 @@ java HelloWorld
 &emsp;&emsp;在java语法方面，因为有C的基础，所以大多数的语法是没有问题的。所以入门的难度不大。然而两者之间还是有一定的区别。Java的package、interface、GC是相比起C++而言更具优势的地方，在设计的结构和形式上会有略微的不同，但总的来说相差不大。
 
 &emsp;&emsp;这是我的calculator小程序的运行截图：
-![calculator运行截图](https://github.com/leungyukshing/GridWorld/blob/master/Part1/Images/calculator.png)
+![calculator运行截图](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/calculator.png)
 
 ## Ant
 &emsp;&emsp;同样地，Ant也是云平台已经安装并配置好的，不需要自己配置。如果需要自己配置，也可以直接通过包管理的方法，在命令行输入
@@ -48,7 +54,7 @@ sudo apt-get install ant
 &emsp;&emsp;执行的方法很简单，在一个项目文件下创建自己的ant文件，一般命名为`build.xml`，然后在命令行中输入`ant`命令就可以了。在自学的过程中，我尝试用ant命令编译和运行`HelloWorld.java`，但是一直都只是编译成功，在控制台没有输出"HelloWorld"，后来自己检查了一下`build.xml`文件后发现，是`project`中的**default**写错了。这里的**default**可以简单地理解为我最终要做的事情，通过找到名为**default**属性字段的**target**，根据其**depends**依赖关系，一层一层地往上找。因此，我就需要把最后一步运行的命令设置是**default**，修改完成后运行成功。
 
 为`HelloWorld.java`编写了测试类，运行`ant`命令后结果：
-![](https://github.com/leungyukshing/GridWorld/blob/master/Part1/Images/ant.png)
+![](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/ant.png)
 
 ## Junit
 &emsp;&emsp;相比起Ant的学习，Junit的自学比较简单。首先我说一下我对Junit的理解。它用于项目的单元测试。之前我们写的测试类有很大的麻烦，一是测试类必须继承TestCase，二是测试的方法必须以test开头，对于一个比较大的类而言，编写一个测试类是很麻烦的，因此我们使用Junit。Junit允许程序员使用`@Test`来描述测试的数据。我们可以使用`assertEquals()`对输出结果进行判定。如果符合预期输出，则输出true，否则报错。
@@ -65,5 +71,5 @@ java -classpath .:junit-4.10.jar -ea org.junit.runner.JUnitCore HelloWorldTest
 ## Sonar
 &emsp;&emsp;作为一个用于代码质量管理的开源平台，Sonar可用作对代码的管理和优化。自己刚学java的时候虽然很多时候写的东西在编译上没有报错，但实际上可能结构不是那么好，或者说有很多冗余的东西，使用Sonar就可以检测出来。同时也可以用Sonar规范代码风格、优化复杂度、添加注释等。
 &emsp;&emsp;我对于自己编写的`calculator.java`代码进行了检测，第一次检测的分数不高，major错误也有几个，经过仔细修改后，包括优化了一些冗余的判断语句等，成功地将major全部修复。最终的测试结果如下：
-![sonar运行](https://github.com/leungyukshing/GridWorld/blob/master/Part1/Images/sonar1.png)
-![sonar测试结果](https://github.com/leungyukshing/GridWorld/blob/master/Part1/Images/sonar.png)
+![sonar运行](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/sonar1.png)
+![sonar测试结果](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/sonar.png)
