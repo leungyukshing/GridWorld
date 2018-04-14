@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AllTest" default="junit" basedir=".">
+    <!-- path setter  -->
+
+    <!-- 源代码src路径 -->
+    <property name="src.path" value="src/java"/>
+    <!-- 编译文件class路径 -->
+    <property name="build.path" value="build"/>
+    <!-- 单元测试代码路径 -->
+    <property name="test.path" value="src/test"/>
+    <!-- lib包路径 -->
+    <property name="lib.path" value="lib"/>    
+    <!-- report路径-->
+    <property name="report.path" value="report"/>     
+        
+    <!-- 设置classpath -->
+    <path id="compile.path">        
+        <fileset dir="${lib.path}">
+            <include name="**/*.jar"/>
+        </fileset>
+        
+        <pathelement path="${build.path}"/>
+    </path>     
+
+    <!-- 清除历史编译class -->
+    <target name="clean" description="clean">
+        <delete dir="${build.path}"/>
+    </target>
+
+    <!-- 编译测试文件，初始化目录 -->
+    <target name="compile" depends="clean">
+        <mkdir dir="${build.path}"/>                        
+        <javac srcdir="${src.path}" destdir="${build.path}"  classpathref="compile.path" includeantruntime="on"/>
+        <javac srcdir="${test.path}" destdir="${build.path}"  classpathref="compile.path" includeantruntime="on"/>
+    </target>      
+         
+    <!-- 执行测试案例 -->
+    <target name="junit" depends="compile">
+        <junit printsummary="true">
+        	<formatter type="xml" usefile="true"/>
+             <classpath refid="compile.path"/>                  
+                      
+             <test name="HelloWorldTest" todir="${report.path}"/>
+         </junit>
+     </target>
+
+     <!-- 清除报告 -->
+     <target name="deltefile">
+     	<delete dir="${report.path}"/>
+     </target>
+</project>
