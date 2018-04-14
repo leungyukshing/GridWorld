@@ -49,11 +49,67 @@ sudo apt-get install ant
 &emsp;&emsp;它的语法主要有几点：
 ① project: 每个project是一个大的任务。
 ② target：每个target更像是一个步骤，可以自己为这个步骤命名。自己指定default值和basedir。当然还有最重要的depends，意思就是执行当前的这个target要后于depends中的target的执行。
-③ 命令元素：target中可以放置许多这些类似于命令的元素，每一对标签都代表着一个命令，当然他们的参数会不一样，用到的时候上网查文档就可以了。这里我主要用到的是clean,mkdir,javac,java这几个。
+③ 命令元素：target中可以放置许多这些类似于命令的元素，每一对标签都代表着一个命令，当然他们的参数会不一样，用到的时候上网查文档就可以了。这里我主要用到的是`clean`,`mkdir`,`javac`,`java`,`junit`这几个。
 
 &emsp;&emsp;执行的方法很简单，在一个项目文件下创建自己的ant文件，一般命名为`build.xml`，然后在命令行中输入`ant`命令就可以了。在自学的过程中，我尝试用ant命令编译和运行`HelloWorld.java`，但是一直都只是编译成功，在控制台没有输出"HelloWorld"，后来自己检查了一下`build.xml`文件后发现，是`project`中的**default**写错了。这里的**default**可以简单地理解为我最终要做的事情，通过找到名为**default**属性字段的**target**，根据其**depends**依赖关系，一层一层地往上找。因此，我就需要把最后一步运行的命令设置是**default**，修改完成后运行成功。
 
-为`HelloWorld.java`编写了测试类，运行`ant`命令后结果：
+为`HelloWorld.java`编写了测试类，编写`build.xml`，最后运行`ant`命令。
+`build.xml`分析
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AllTest" default="junit" basedir=".">
+
+    <!-- 源代码src路径 -->
+    <property name="src.path" value="src/java"/>
+    <!-- 编译文件.class路径 -->
+    <property name="build.path" value="build"/>
+    <!-- 测试代码路径 -->
+    <property name="test.path" value="src/test"/>
+    <!-- junit包路径 -->
+    <property name="lib.path" value="lib"/>
+    <!-- report路径 -->
+    <property name="report.path" value="report"/>
+
+    <!-- 设置classpath -->
+    <path id="compile.path">
+        <fileset dir="${lib.path}">
+            <include name="**/*.jar"/>
+        </fileset>
+
+        <pathelement path="${build.path}"/>
+    </path>
+
+    <!-- 清除历史编译.class -->
+    <target name="clean" description="clean">
+        <delete dir="${build.path}"/>
+    </target>
+
+    <!-- 编译测试文件，初始化build目录 -->
+    <target name="compile" depends="clean">
+        <mkdir dir="${build.path}"/>
+        <javac srcdir="${src.path}" destdir="${build.path}"  classpathref="compile.path" includeantruntime="on"/>
+        <javac srcdir="${test.path}" destdir="${build.path}"  classpathref="compile.path" includeantruntime="on"/>
+    </target>
+
+    <!-- 执行测试案例 -->
+    <target name="junit" depends="compile">
+        <junit printsummary="true">
+        	<formatter type="xml" usefile="true"/>
+             <classpath refid="compile.path"/>
+
+             <test name="HelloWorldTest" todir="${report.path}"/>
+         </junit>
+     </target>
+
+     <!-- 清除报告 -->
+     <target name="deltefile">
+     	<delete dir="${report.path}"/>
+     </target>
+</project>
+```
+其中，对`property`的设置是为了便于下面的代码书写路径。设置了一个名为**compile.path**的path路径，意思是当有属性使用到这个路径时，它将包含两部分：一是`fileset`设定的在`lib`下的一类文件；二是`build`目录下的文件。这样设置的好处是，当后面需要使用到测试类的时候，可以顺利地编译和运行，而无须在多个地方重复include同样的文件。同时，我在`junit`中添加了输出测试报告，这样就可以通过查看测试报告了解到详细的错误信息。
+
+运行截图：
 ![](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/ant.png)
 
 ## Junit
@@ -65,11 +121,13 @@ javac -classpath .:junit-4.10.jar HelloWorldTest.java
 java -classpath .:junit-4.10.jar -ea org.junit.runner.JUnitCore HelloWorldTest
 ```
 
-
 &emsp;&emsp;同时我也可以将junit写在`build.xml`中，使用`ant`命令一次过实现对一个程序的编译和测试。
+这是我使用ant和junit对`HelloWorld.java`测试的结果：
+![](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/junit.png)
 
 ## Sonar
 &emsp;&emsp;作为一个用于代码质量管理的开源平台，Sonar可用作对代码的管理和优化。自己刚学java的时候虽然很多时候写的东西在编译上没有报错，但实际上可能结构不是那么好，或者说有很多冗余的东西，使用Sonar就可以检测出来。同时也可以用Sonar规范代码风格、优化复杂度、添加注释等。
-&emsp;&emsp;我对于自己编写的`calculator.java`代码进行了检测，第一次检测的分数不高，major错误也有几个，经过仔细修改后，包括优化了一些冗余的判断语句等，成功地将major全部修复。最终的测试结果如下：
+&emsp
+&emsp;&emsp;我对于自己编写的`calculator.java`代码进行了检测，第一次检测的分数不高，major错误也有几个，其中有变量命名的风格问题，也有单个函数复杂度过高的问题。经过仔细修改后，包括优化了一些冗余的判断语句等，成功地将major全部修复。最终的测试结果如下：
 ![sonar运行](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/sonar1.png)
 ![sonar测试结果](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/sonar.png)
