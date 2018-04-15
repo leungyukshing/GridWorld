@@ -29,7 +29,8 @@ windows下的配置过程有兴趣了解的话可以访问我的博客https://le
 javac HelloWorld.java
 java HelloWorld
 ```
-需要注意的是文件名必须和主类的名字相一致，否则JVM会因为找不到程序入口而报错。
+&emsp;&emsp;对于java的学习和更为详细的笔记可以参考我的博客：https://leungyukshing.github.io/tags/Java/
+&emsp;&emsp;需要注意的是文件名必须和主类的名字相一致，否则JVM会因为找不到程序入口而报错。
 &emsp;&emsp;在java语法方面，因为有C的基础，所以大多数的语法是没有问题的。所以入门的难度不大。然而两者之间还是有一定的区别。Java的package、interface、GC是相比起C++而言更具优势的地方，在设计的结构和形式上会有略微的不同，但总的来说相差不大。
 
 &emsp;&emsp;这是我的calculator小程序的运行截图：
@@ -47,9 +48,11 @@ sudo apt-get install ant
 ② 部署编译java程序
 
 &emsp;&emsp;它的语法主要有几点：
-① project: 每个project是一个大的任务。
-② target：每个target更像是一个步骤，可以自己为这个步骤命名。自己指定default值和basedir。当然还有最重要的depends，意思就是执行当前的这个target要后于depends中的target的执行。
-③ 命令元素：target中可以放置许多这些类似于命令的元素，每一对标签都代表着一个命令，当然他们的参数会不一样，用到的时候上网查文档就可以了。这里我主要用到的是`clean`,`mkdir`,`javac`,`java`,`junit`这几个。
+① project: 每个project是一个大的任务。每个`build.xml`文件中至少含有一个project。其中`name`属性是project的名字，`default`属性是这个project默认执行的`target`，`basedir`属性是指整个项目中文件路径的基地址。
+② target：每个target更像是一个步骤，可以自己为这个步骤命名，用于project的唯一识别。当然还有最重要的depends，意思就是执行当前的这个target要依赖于depends中的target的执行。
+③ property：`property`有点类似于C++中的宏定义，可以用一些我们便于理解的变量名来代替复杂的路径，提高代码的可读性。
+
+&emsp;&emsp;这次实训我主要用到的是`clean`,`mkdir`,`javac`,`java`,`junit`这几个功能。
 
 &emsp;&emsp;执行的方法很简单，在一个项目文件下创建自己的ant文件，一般命名为`build.xml`，然后在命令行中输入`ant`命令就可以了。在自学的过程中，我尝试用ant命令编译和运行`HelloWorld.java`，但是一直都只是编译成功，在控制台没有输出"HelloWorld"，后来自己检查了一下`build.xml`文件后发现，是`project`中的**default**写错了。这里的**default**可以简单地理解为我最终要做的事情，通过找到名为**default**属性字段的**target**，根据其**depends**依赖关系，一层一层地往上找。因此，我就需要把最后一步运行的命令设置是**default**，修改完成后运行成功。
 
@@ -126,7 +129,7 @@ java -classpath .:junit-4.10.jar -ea org.junit.runner.JUnitCore HelloWorldTest
 ![](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/junit.png)
 
 ## Sonar
-&emsp;&emsp;作为一个用于代码质量管理的开源平台，Sonar可用作对代码的管理和优化。自己刚学java的时候虽然很多时候写的东西在编译上没有报错，但实际上可能结构不是那么好，或者说有很多冗余的东西，使用Sonar就可以检测出来。同时也可以用Sonar规范代码风格、优化复杂度、添加注释等。
+&emsp;&emsp;虽然没有要求，但是我也想把Sonar的学习写入报告。作为一个用于代码质量管理的开源平台，Sonar可用作对代码的管理和优化。自己刚学java的时候虽然很多时候写的东西在编译上没有报错，但实际上可能结构不是那么好，或者说有很多冗余的东西，使用Sonar就可以检测出来。同时也可以用Sonar规范代码风格、优化复杂度、添加注释等。
 &emsp;&emsp;在配置Sonar服务的环境变量时，通过修改`~/.bashrc`将环境变量添加进去。命令行输入：
 ```
 vim ~/.bashrc
