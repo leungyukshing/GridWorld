@@ -47,14 +47,17 @@ sudo apt-get install ant
 ```
 来进行安装。
 
-&emsp;&emsp; Ant主要有三大功能：
+&emsp;&emsp; Ant主要有两大功能：
 ① 对制定文件或目录的删除、移动、创建
 ② 部署编译java程序
 
 &emsp;&emsp;它的语法主要有几点：
-① project: 每个project是一个大的任务。每个`build.xml`文件中至少含有一个project。其中`name`属性是project的名字，`default`属性是这个project默认执行的`target`，`basedir`属性是指整个项目中文件路径的基地址。
-② target：每个target更像是一个步骤，可以自己为这个步骤命名，用于project的唯一识别。当然还有最重要的depends，意思就是执行当前的这个target要依赖于depends中的target的执行。
-③ property：`property`有点类似于C++中的宏定义，可以用一些我们便于理解的变量名来代替复杂的路径，提高代码的可读性。
+
+&emsp;&emsp;① project: 每个project是一个大的任务。每个`build.xml`文件中至少含有一个project。其中`name`属性是project的名字，`default`属性是这个project默认执行的`target`，`basedir`属性是指整个项目中文件路径的基地址。
+
+&emsp;&emsp;② target：每个target更像是一个步骤，可以自己为这个步骤命名，用于project的唯一识别。当然还有最重要的depends，意思就是执行当前的这个target要依赖于depends中的target的执行。
+
+&emsp;&emsp;③ property：`property`有点类似于C++中的宏定义，可以用一些我们便于理解的变量名来代替复杂的路径，提高代码的可读性。
 
 &emsp;&emsp;这次实训我主要用到的是`clean`,`mkdir`,`javac`,`java`,`junit`这几个功能。
 
@@ -118,7 +121,7 @@ sudo apt-get install ant
 
 &emsp;&emsp;值得注意的是，当我为`EasyCalculator.java`编写`build.xml`时，在`java`的部分要加上`fork="yes"`，这样才能成功运行GUI程序。
 
-运行截图：
+这是测试`HelloWorld`的运行截图：
 ![](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/ant.png)
 
 ## Junit
