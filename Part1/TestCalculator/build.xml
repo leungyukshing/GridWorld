@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="TestCalculator" default="run" basedir=".">
+
+	<target name="compile">
+		<javac srcdir="calculator" destdir="calculator"/>
+	</target>
+	
+	<target name="run" depends="compile">
+		<java classname="EasyCalculator" classpath="calculator" fork="yes"/>
+	</target>
+	
+</project>
