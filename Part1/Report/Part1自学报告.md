@@ -13,10 +13,15 @@
 
 &emsp;&emsp;命令行打开和退出Vim的操作：
 1. 在命令行直接输入`vim`，进入Vim编辑器界面
+
 ![vim打开](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/vim1.png)
+
 2. 在vim中编写代码
+
 ![vim编写代码](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/vim2.png)
+
 3. 编辑结束后，先按`Esc`，再输入`:wq`保存退出。
+
 ![vim保存退出](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/vim3.png)
 
 ## Java
@@ -38,6 +43,7 @@ java HelloWorld
 &emsp;&emsp;在java语法方面，因为有C的基础，所以大多数的语法是没有问题的。所以入门的难度不大。然而两者之间还是有一定的区别。Java的package、interface、GC是相比起C++而言更具优势的地方，在设计的结构和形式上会有略微的不同，但总的来说相差不大。
 
 &emsp;&emsp;这是我的calculator小程序的运行截图：
+
 ![calculator运行截图](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/calculator.png)
 
 ## Ant
@@ -122,6 +128,7 @@ sudo apt-get install ant
 &emsp;&emsp;值得注意的是，当我为`EasyCalculator.java`编写`build.xml`时，在`java`的部分要加上`fork="yes"`，这样才能成功运行GUI程序。
 
 这是测试`HelloWorld`的运行截图：
+
 ![](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/ant.png)
 
 ## Junit
@@ -135,6 +142,7 @@ java -classpath .:junit-4.10.jar -ea org.junit.runner.JUnitCore HelloWorldTest
 
 &emsp;&emsp;同时我也可以将junit写在`build.xml`中，使用`ant`命令一次过实现对一个程序的编译和测试。
 这是我使用ant和junit对`HelloWorld.java`测试的结果：
+
 ![](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/junit.png)
 
 ## Sonar
@@ -145,6 +153,7 @@ java -classpath .:junit-4.10.jar -ea org.junit.runner.JUnitCore HelloWorldTest
 vim ~/.bashrc
 ```
 然后添加变量：
+
 ![sonar环境变量](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/sonar2.png)
 然后在命令行加载变量，完成配置：
 ```
@@ -165,9 +174,11 @@ sonar-runner
 &emsp;&emsp;我对于自己编写的`calculator.java`代码进行了检测。第一次检测的分数不高，major错误也有几个，其中有变量命名的风格问题，也有单个函数复杂度过高的问题。经过仔细修改后，包括优化了一些冗余的判断语句等，成功地将major全部修复。最终的测试结果如下：
 
 命令行显示
+
 ![sonar运行](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/sonar1.png)
 
 打开`http:\\localhost:9000`的显示
+
 ![sonar测试结果](https://raw.githubusercontent.com/leungyukshing/GridWorld/master/Part1/Images/sonar.png)
 
 # 小结
