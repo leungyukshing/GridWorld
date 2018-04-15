@@ -30,7 +30,9 @@ javac HelloWorld.java
 java HelloWorld
 ```
 &emsp;&emsp;对于java的学习和更为详细的笔记可以参考我的博客：https://leungyukshing.github.io/tags/Java/
+
 &emsp;&emsp;需要注意的是文件名必须和主类的名字相一致，否则JVM会因为找不到程序入口而报错。
+
 &emsp;&emsp;在java语法方面，因为有C的基础，所以大多数的语法是没有问题的。所以入门的难度不大。然而两者之间还是有一定的区别。Java的package、interface、GC是相比起C++而言更具优势的地方，在设计的结构和形式上会有略微的不同，但总的来说相差不大。
 
 &emsp;&emsp;这是我的calculator小程序的运行截图：
@@ -132,6 +134,7 @@ java -classpath .:junit-4.10.jar -ea org.junit.runner.JUnitCore HelloWorldTest
 
 ## Sonar
 &emsp;&emsp;虽然没有要求，但是我也想把Sonar的学习写入报告。作为一个用于代码质量管理的开源平台，Sonar可用作对代码的管理和优化。自己刚学java的时候虽然很多时候写的东西在编译上没有报错，但实际上可能结构不是那么好，或者说有很多冗余的东西，使用Sonar就可以检测出来。同时也可以用Sonar规范代码风格、优化复杂度、添加注释等。
+
 &emsp;&emsp;在配置Sonar服务的环境变量时，通过修改`~/.bashrc`将环境变量添加进去。命令行输入：
 ```
 vim ~/.bashrc
