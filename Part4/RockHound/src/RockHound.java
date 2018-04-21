@@ -11,8 +11,9 @@ public class RockHound extends Critter {
         for (Actor a : actors)
         {
           // Only remove Rock
-            if (a instanceof Rock)
+            if (a instanceof Rock) {
                 a.removeSelfFromGrid();
+            }
         }
     }
 }

@@ -6,7 +6,8 @@ import info.gridworld.actor.Rock;
 import info.gridworld.grid.Location;
 import java.awt.Color;
 
-public class BlusterCritterRunner {
+public final class BlusterCritterRunner {
+    private BlusterCritterRunner() {}
   public static void main(String[] args) {
     ActorWorld world = new ActorWorld();
     BlusterCritter alice = new BlusterCritter(10);

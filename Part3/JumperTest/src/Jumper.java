@@ -43,9 +43,9 @@ public class Jumper extends Actor
      * Constructs a Jumper of a given color.
      * @param JumperColor the color for this Jumper
      */
-    public Jumper(Color JumperColor)
+    public Jumper(Color jumperColor)
     {
-        setColor(JumperColor);
+        setColor(jumperColor);
     }
 
     /**
@@ -53,10 +53,12 @@ public class Jumper extends Actor
      */
     public void act()
     {
-        if (canMove())
+        if (canMove()) {
             move();
-        else
+        }
+        else {
             turn();
+        }
     }
 
     /**
@@ -74,18 +76,17 @@ public class Jumper extends Actor
     public void move()
     {
         Grid<Actor> gr = getGrid();
-        if (gr == null)
+        if (gr == null) {
             return;
+        }
         Location loc = getLocation();
         Location next = (loc.getAdjacentLocation(getDirection())).getAdjacentLocation(getDirection());
-        if (gr.isValid(next))
+        if (gr.isValid(next)) {
             moveTo(next);
-        else
+        }
+        else {
             removeSelfFromGrid();
-        /*
-        Flower flower = new Flower(getColor());
-        flower.putSelfInGrid(gr, loc);
-        */
+        }
     }
 
     /**
@@ -96,12 +97,14 @@ public class Jumper extends Actor
     public boolean canMove()
     {
         Grid<Actor> gr = getGrid();
-        if (gr == null)
+        if (gr == null) {
             return false;
+        }
         Location loc = getLocation();
         Location next = (loc.getAdjacentLocation(getDirection())).getAdjacentLocation(getDirection());
-        if (!gr.isValid(next))
+        if (!gr.isValid(next)) {
             return false;
+        }
         Actor neighbor = gr.get(next);
         return (neighbor == null) || (neighbor instanceof Flower) || (neighbor instanceof Bug);
         // ok to move into empty location or onto flower or onto a bug

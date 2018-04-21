@@ -9,14 +9,12 @@ public class ChameleonKid extends ModifiedChameleonCritter {
     {
         ArrayList<Actor> result = new ArrayList<Actor>();
         ArrayList<Actor> neighbors =  getGrid().getNeighbors(getLocation());
-        System.out.println("In kid total: " + neighbors.size());
+        // Find out those in the front or back of the critter
         for (int i = 0; i < neighbors.size(); i++) {
           if (getLocation().getDirectionToward(neighbors.get(i).getLocation()) == 0 || getLocation().getDirectionToward(neighbors.get(i).getLocation()) == 180) {
-            System.out.println("In: "+getLocation().getDirectionToward(neighbors.get(i).getLocation()));
             result.add(neighbors.get(i));
           }
         }
-        System.out.println("In kid result: " + result.size());
         return result;
     }
 }

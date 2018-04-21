@@ -4,8 +4,9 @@ import info.gridworld.actor.Flower;
 import info.gridworld.actor.Rock;
 import info.gridworld.grid.Location;
 
-public class QuickCrabRunner
+public final class QuickCrabRunner
 {
+    private QuickCrabRunner() {}
     public static void main(String[] args)
     {
         ActorWorld world = new ActorWorld();

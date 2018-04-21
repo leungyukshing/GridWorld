@@ -7,9 +7,9 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 public class QuickCrab extends CrabCritter {
-  public ArrayList<Location> getMoveLocations()
-    {
-      /*get the quik position*/
+
+  private ArrayList<Location> getQuick() {
+    /*get the quik position*/
       ArrayList<Location> locs = new ArrayList<Location>();
       
       Location present = getLocation();
@@ -34,15 +34,22 @@ public class QuickCrab extends CrabCritter {
           locs.add(rightTwo);
         }
       }
+      return locs;
+  }
+
+  public ArrayList<Location> getMoveLocations()
+    {
+      ArrayList<Location> locs = getQuick();
 
       if (locs.size() == 0) {
          
         int[] dirs =
             { Location.LEFT, Location.RIGHT };
-        for (Location loc : getLocationsInDirections(dirs))
-            if (getGrid().get(loc) == null)
-                locs.add(loc);
-
+        for (Location loc : getLocationsInDirections(dirs)) {
+          if (getGrid().get(loc) == null) {
+              locs.add(loc);
+            }
+        }
       }
       return locs;
     }

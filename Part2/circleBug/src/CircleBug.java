@@ -50,7 +50,6 @@ public class CircleBug extends Bug
         else
         {
             turn();
-            //turn();
             steps = 0;
         }
     }

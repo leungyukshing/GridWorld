@@ -22,16 +22,16 @@ public class BlusterCritter extends Critter {
         ArrayList<Actor> result = new ArrayList<Actor>();
         
         Location presentPosition = getLocation();
-        int present_column = presentPosition.getCol();
-        int present_row = presentPosition.getRow();
+        int presentColumn = presentPosition.getCol();
+        int presentRow = presentPosition.getRow();
 
-        int neighbor_column_left = (present_column - 2) < 0 ? 0 : present_column - 2;
-        int neighbor_column_right = (present_column + 2) >= getGrid().getNumCols() ? getGrid().getNumCols() - 1 : present_column + 2;
-        int neighbor_row_top = (present_row - 2) < 0 ? 0 : present_row - 2;
-        int neighbor_row_button = (present_row + 2) >= getGrid().getNumRows() ? getGrid().getNumRows() - 1 : present_row + 2;
+        int neighborColumnLeft = (presentColumn - 2) < 0 ? 0 : presentColumn - 2;
+        int neighborColumnRight = (presentColumn + 2) >= getGrid().getNumCols() ? getGrid().getNumCols() - 1 : presentColumn + 2;
+        int neighborRowTop = (presentRow - 2) < 0 ? 0 : presentRow - 2;
+        int neighborRowButton = (presentRow + 2) >= getGrid().getNumRows() ? getGrid().getNumRows() - 1 : presentRow + 2;
         Grid<Actor> grid = getGrid();
-        for (int i = neighbor_row_top; i <= neighbor_row_button; i++) {
-          for (int j = neighbor_column_left; j <= neighbor_column_right; j++) {
+        for (int i = neighborRowTop; i <= neighborRowButton; i++) {
+          for (int j = neighborColumnLeft; j <= neighborColumnRight; j++) {
             Actor temp = grid.get(new Location(i, j));
             if (temp != null) {
               result.add(temp);
@@ -41,34 +41,46 @@ public class BlusterCritter extends Critter {
         return result;
     }
 
-    public void processActors(ArrayList<Actor> actors)
-    {
-      for (Actor a : actors)
-        {
-            if (!(a instanceof Rock) && !(a instanceof Critter))
-                a.removeSelfFromGrid();
-        }
-        // brighter
-        if (actors.size() < c) {
-          Color c = getColor();
-          int red = (int) (c.getRed() * (1 + DARKENING_FACTOR));
-          int green = (int) (c.getGreen() * (1 + DARKENING_FACTOR));
-          int blue = (int) (c.getBlue() * (1 + DARKENING_FACTOR));
+    // brighten the critter
+    private void brighten() {
+       Color color = getColor();
+          int red = (int) (color.getRed() * (1 + DARKENING_FACTOR));
+          int green = (int) (color.getGreen() * (1 + DARKENING_FACTOR));
+          int blue = (int) (color.getBlue() * (1 + DARKENING_FACTOR));
           red = red > 255 ? 255 : red;
           green = green > 255 ? 255 : green;
           blue = blue > 255 ? 255 : blue;
           setColor(new Color(red, green, blue));
-        }
-        // darker
-        else {
-          Color c = getColor();
-          int red = (int) (c.getRed() * (1 - DARKENING_FACTOR));
-          int green = (int) (c.getGreen() * (1 - DARKENING_FACTOR));
-          int blue = (int) (c.getBlue() * (1 - DARKENING_FACTOR));
+    }
+
+    // darken the critter
+    private void darken() {
+      Color color = getColor();
+          int red = (int) (color.getRed() * (1 - DARKENING_FACTOR));
+          int green = (int) (color.getGreen() * (1 - DARKENING_FACTOR));
+          int blue = (int) (color.getBlue() * (1 - DARKENING_FACTOR));
           red = red < 0 ? 0 : red;
           green = green < 0 ? 0 : green;
           blue = blue < 0 ? 0 : blue;
           setColor(new Color(red, green, blue));
+    }
+
+    public void processActors(ArrayList<Actor> actors)
+    {
+      for (Actor a : actors)
+        {
+          // Not a rock or a critter, then eat
+            if (!(a instanceof Rock) && !(a instanceof Critter)) {
+              a.removeSelfFromGrid();
+            }  
+        }
+        // brighter
+        if (actors.size() < c) {
+          brighten();
+        }
+        // darker
+        else {
+          darken();
         }
     }
 }

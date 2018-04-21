@@ -51,7 +51,7 @@ public class ZBug extends Bug
         }
         else
         {
-            if (flag == true) {
+            if (flag) {
                 return;
             }
             else if (getDirection() == 90) {
@@ -61,8 +61,7 @@ public class ZBug extends Bug
                 setDirection(90);
                 flag = true;
             }
-            //turn();
-            //turn();
+            
             steps = 0;
         }
     }

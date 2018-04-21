@@ -11,13 +11,17 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
   private int rows, columns;
   
   public SparseBoundedGrid2(int rows, int cols) {
-    if (rows <= 0)
-            throw new IllegalArgumentException("rows <= 0");
-        if (cols <= 0)
-            throw new IllegalArgumentException("cols <= 0");
-        //occupantArray = new Object[rows][cols];
+    if (rows <= 0) {
+      throw new IllegalArgumentException("rows <= 0");
+    }
+            
+        if (cols <= 0) {
+          throw new IllegalArgumentException("cols <= 0");
+        }
+
     this.rows = rows;
     this.columns = cols;
+    // Initialize a HashMap
     occupantArray = new HashMap<Location, E>();
     
   }
@@ -38,7 +42,7 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
 
   public ArrayList<Location> getOccupiedLocations() {
     ArrayList<Location> theLocations = new ArrayList<Location>();
-
+    // Each key in the Map is a unique location
     for (Location key : occupantArray.keySet()) {  
     theLocations.add(key);
     }  
@@ -47,19 +51,25 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
   }
 
   public E get(Location loc) {
-    if (!isValid(loc))
-            throw new IllegalArgumentException("Location " + loc
+    if (!isValid(loc)) {
+      throw new IllegalArgumentException("Location " + loc
                     + " is not valid");
+    }
+          // return an occupant based on the given location
         return (E) occupantArray.get(loc); // unavoidable warning
   }
 
   public E put(Location loc, E obj)
     {
-        if (!isValid(loc))
-            throw new IllegalArgumentException("Location " + loc
+        if (!isValid(loc)) {
+          throw new IllegalArgumentException("Location " + loc
                     + " is not valid");
-        if (obj == null)
-            throw new NullPointerException("obj == null");
+        }
+            
+        if (obj == null) {
+          throw new IllegalArgumentException("obj == null");
+        }
+            
 
         // Add the object to the grid.
         E oldOccupant = get(loc);
@@ -69,9 +79,11 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
 
   public E remove(Location loc)
     {
-        if (!isValid(loc))
-            throw new IllegalArgumentException("Location " + loc
+        if (!isValid(loc)) {
+          throw new IllegalArgumentException("Location " + loc
                     + " is not valid");
+        }
+            
         
         // Remove the object from the grid.
         E r = get(loc);

@@ -49,8 +49,9 @@ public class CrabCritter extends Critter
         for (Location loc : getLocationsInDirections(dirs))
         {
             Actor a = getGrid().get(loc);
-            if (a != null)
+            if (a != null) {
                 actors.add(a);
+            }
         }
 
         return actors;
@@ -64,9 +65,11 @@ public class CrabCritter extends Critter
         ArrayList<Location> locs = new ArrayList<Location>();
         int[] dirs =
             { Location.LEFT, Location.RIGHT };
-        for (Location loc : getLocationsInDirections(dirs))
-            if (getGrid().get(loc) == null)
+        for (Location loc : getLocationsInDirections(dirs)) {
+            if (getGrid().get(loc) == null) {
                 locs.add(loc);
+            }
+        }
 
         return locs;
     }
@@ -80,14 +83,17 @@ public class CrabCritter extends Critter
         {
             double r = Math.random();
             int angle;
-            if (r < 0.5)
+            if (r < 0.5) {
                 angle = Location.LEFT;
-            else
+            }
+            else {
                 angle = Location.RIGHT;
+            }
             setDirection(getDirection() + angle);
         }
-        else
+        else {
             super.makeMove(loc);
+        }
     }
     
     /**
@@ -107,8 +113,9 @@ public class CrabCritter extends Critter
         for (int d : directions)
         {
             Location neighborLoc = loc.getAdjacentLocation(getDirection() + d);
-            if (gr.isValid(neighborLoc))
+            if (gr.isValid(neighborLoc)) {
                 locs.add(neighborLoc);
+            }
         }
         return locs;
     }    

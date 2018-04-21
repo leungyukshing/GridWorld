@@ -6,7 +6,8 @@ import info.gridworld.actor.Rock;
 import info.gridworld.grid.Location;
 import java.awt.Color;
 
-public class ChameleonKidRunner {
+public final class ChameleonKidRunner {
+    private ChameleonKidRunner() {}
   public static void main(String[] args) {
     ActorWorld world = new ActorWorld();
     ChameleonKid alice = new ChameleonKid();
@@ -19,11 +20,13 @@ public class ChameleonKidRunner {
     bug2.setColor(Color.PINK);
 
     // condition1
+    // change to bug1 or bug2
     world.add(new Location(3, 2), alice);
     world.add(new Location(2, 2), bug1);
     world.add(new Location(4, 2), bug2);
 
     // condition2
+    // change to rock's color
     Rock rock = new Rock();
     rock.setColor(Color.BLACK);
     world.add(new Location(5, 5), bob);

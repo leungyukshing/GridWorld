@@ -10,13 +10,17 @@ public class SparseBoundedGrid<E> extends AbstractGrid<E> {
   private int rows, columns;
   
   public SparseBoundedGrid(int rows, int cols) {
-    if (rows <= 0)
-            throw new IllegalArgumentException("rows <= 0");
-        if (cols <= 0)
-            throw new IllegalArgumentException("cols <= 0");
-        //occupantArray = new Object[rows][cols];
+    if (rows <= 0) {
+      throw new IllegalArgumentException("rows <= 0");
+    }
+            
+        if (cols <= 0) {
+          throw new IllegalArgumentException("cols <= 0");
+        }
+
     this.rows = rows;
     this.columns = cols;
+    // Allocate memeory space
     occupantArray = new ArrayList<LinkedList<OccupantInCol>>(rows);
     for (int i = 0; i < rows; i++) {
       LinkedList<OccupantInCol> temp = new LinkedList<OccupantInCol>();
@@ -40,10 +44,11 @@ public class SparseBoundedGrid<E> extends AbstractGrid<E> {
 
   public ArrayList<Location> getOccupiedLocations() {
     ArrayList<Location> theLocations = new ArrayList<Location>();
-
+    // Find out all the occupants stored in occupantArray
     for (int r = 0; r < rows; r++) {
       for (int c = 0; c < occupantArray.get(r).size(); c++) {
         OccupantInCol ob = occupantArray.get(r).get(c);
+        // Obtain Location for each occupant
          Location loc = new Location(r, ob.getCol());
          theLocations.add(loc);
       }
@@ -53,9 +58,11 @@ public class SparseBoundedGrid<E> extends AbstractGrid<E> {
   }
 
   public E get(Location loc) {
-    if (!isValid(loc))
-            throw new IllegalArgumentException("Location " + loc
+    if (!isValid(loc)) {
+      throw new IllegalArgumentException("Location " + loc
                     + " is not valid");
+    }
+            
         LinkedList<OccupantInCol> row = occupantArray.get(loc.getRow());
         // First to test whether the row has non-empty actor
         if (row.size() == 0) {
@@ -64,6 +71,7 @@ public class SparseBoundedGrid<E> extends AbstractGrid<E> {
         else {
           // To find the occupant that in the column
           for (int i = 0; i < row.size(); i++) {
+            // Traverse each ocupant in the LinkedList
             if (row.get(i).getCol() == loc.getCol()) {
               return (E) row.get(i).getOccupant();
             }
@@ -75,11 +83,15 @@ public class SparseBoundedGrid<E> extends AbstractGrid<E> {
 
   public E put(Location loc, E obj)
     {
-        if (!isValid(loc))
-            throw new IllegalArgumentException("Location " + loc
+        if (!isValid(loc)) {
+          throw new IllegalArgumentException("Location " + loc
                     + " is not valid");
-        if (obj == null)
-            throw new NullPointerException("obj == null");
+        }
+            
+        if (obj == null) {
+          throw new IllegalArgumentException("obj == null");
+        }
+            
 
         // Add the object to the grid.
         E oldOccupant = get(loc);
@@ -89,13 +101,23 @@ public class SparseBoundedGrid<E> extends AbstractGrid<E> {
 
   public E remove(Location loc)
     {
-        if (!isValid(loc))
-            throw new IllegalArgumentException("Location " + loc
+        if (!isValid(loc)) {
+          throw new IllegalArgumentException("Location " + loc
                     + " is not valid");
+        }
+            
         
         // Remove the object from the grid.
         E r = get(loc);
-        occupantArray.get(loc.getRow()).remove(loc.getCol());
+        LinkedList<OccupantInCol> list = occupantArray.get(loc.getRow());
+        if (list.size() != 0) {
+          for (int i = 0; i< list.size(); i++) {
+            // Find the occupant in the specified column
+            if (list.get(i).getCol() == loc.getCol()) {
+              list.remove(i);
+            }
+          }
+        }
         return r;
     }
 }

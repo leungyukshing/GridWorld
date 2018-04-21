@@ -25,19 +25,17 @@ import info.gridworld.actor.Bug;
 public class DancingBug extends Bug
 {
     private int steps;
-    //private int sideLength;
     private int[] turns;
 
     /**
      * Constructs a box bug that traces a square of a given side length
      * @param length the side length
      */
-    public DancingBug(int[] _turns)
+    public DancingBug(int[] newTurns)
     {
         steps = 0;
-        //sideLength = length;
-        turns = new int[_turns.length];
-        System.arraycopy(_turns, 0, turns, 0, _turns.length);
+        turns = new int[newTurns.length];
+        System.arraycopy(newTurns, 0, turns, 0, newTurns.length);
     }
 
     /**
@@ -57,7 +55,8 @@ public class DancingBug extends Bug
                 steps = 0;
             }
         }
-        else
+        else {
             turn();
+        }
     }
 }

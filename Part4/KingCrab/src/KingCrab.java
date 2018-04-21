@@ -16,9 +16,11 @@ public class KingCrab extends CrabCritter {
             int direction = present.getDirectionToward(a.getLocation());
             // The position that the actor suppose to move to
             Location toMove = a.getLocation().getAdjacentLocation(direction);
+            // If the actor can move
             if (grid.isValid(toMove)) {
               a.moveTo(toMove);
             }
+            // Or remove it
             else {
               a.removeSelfFromGrid();
             }

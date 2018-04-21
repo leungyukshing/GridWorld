@@ -8,10 +8,9 @@ import java.awt.Color;
 public class UnboundedGrid2<E> extends AbstractGrid<E> {
   private Object[][] occupantArray;
   private int gridSize;
-  private final int FACTOR = 2;
+  private final int factor = 2;
 
   public UnboundedGrid2() {
-    System.out.println("In constructor");
     gridSize = 16;
     occupantArray = new Object[16][16];
   }
@@ -26,6 +25,8 @@ public class UnboundedGrid2<E> extends AbstractGrid<E> {
         return -1;
     }
 
+    // Override
+    // Non-negative number is volid
     public boolean isValid(Location loc)
     {
         return loc.getRow() >= 0 && loc.getCol() >= 0;
@@ -48,37 +49,48 @@ public class UnboundedGrid2<E> extends AbstractGrid<E> {
 
     public E get(Location loc)
     {
-        if (loc == null)
-            throw new NullPointerException("loc == null");
-        if (loc.getRow() >= gridSize || loc.getCol() >= gridSize)
+        if (loc == null) {
+          throw new IllegalArgumentException("loc == null");
+        }
+            
+            // A position out of present grid is allowed! 
+            // when putting the actor into the grid, we will extend it.
+        if (loc.getRow() >= gridSize || loc.getCol() >= gridSize) {
           return null;
+        }
         
         return (E) occupantArray[loc.getRow()][loc.getCol()]; // unavoidable warning
     }
 
     public E put(Location loc, E obj) {
-      System.out.println("In put");
-      if (!isValid(loc))
-            throw new IllegalArgumentException("Location " + loc
+      if (!isValid(loc)) {
+        throw new IllegalArgumentException("Location " + loc
                     + " is not valid");
-        if (obj == null)
-            throw new NullPointerException("obj == null");
-
+      }
+            
+        if (obj == null) {
+          throw new IllegalArgumentException("obj == null");
+        }
+            
         int presentSize = gridSize;
         
+        // Calculate the extension
         while (loc.getRow() >= gridSize || loc.getCol() >= gridSize) {
-          gridSize *= FACTOR;
+          gridSize *= factor;
         }
 
+        // Extend present grid by copying.
         if (gridSize != presentSize) {
           Object[][] newGrid = new Object[gridSize][gridSize];
           for (int i = 0; i < presentSize; i++) {
             System.arraycopy(occupantArray[i], 0, newGrid[i], 0, presentSize);
           }
+          // Assign the new grid to the present grid.
+          // The old memory will be collected by JVM
           occupantArray = newGrid;
           
         }
-        System.out.println(occupantArray[0].length);
+
         // Add the object to the grid.
         E oldOccupant = get(loc);
         occupantArray[loc.getRow()][loc.getCol()] = obj;
@@ -87,9 +99,11 @@ public class UnboundedGrid2<E> extends AbstractGrid<E> {
 
     public E remove(Location loc)
     {
-        if (!isValid(loc))
-            throw new IllegalArgumentException("Location " + loc
+        if (!isValid(loc)) {
+          throw new IllegalArgumentException("Location " + loc
                     + " is not valid");
+        }
+            
         
         // Remove the object from the grid.
         E r = get(loc);

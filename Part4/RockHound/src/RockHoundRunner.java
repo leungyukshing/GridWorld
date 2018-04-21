@@ -6,7 +6,8 @@ import info.gridworld.actor.Rock;
 import info.gridworld.grid.Location;
 import java.awt.Color;
 
-public class RockHoundRunner {
+public final class RockHoundRunner {
+    private RockHoundRunner() {}
   public static void main(String[] args) {
     ActorWorld world = new ActorWorld();
     RockHound alice = new RockHound();
@@ -19,11 +20,13 @@ public class RockHoundRunner {
     bug2.setColor(Color.PINK);
 
     // condition1
+    // do not eat bug
     world.add(new Location(3, 2), alice);
     world.add(new Location(2, 2), bug1);
     world.add(new Location(4, 2), bug2);
 
     // condition2
+    // eat rocks
     Rock rock1 = new Rock();
     Rock rock2 = new Rock();
     Rock rock3 = new Rock();

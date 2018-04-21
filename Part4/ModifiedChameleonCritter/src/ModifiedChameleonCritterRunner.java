@@ -6,7 +6,8 @@ import info.gridworld.actor.Rock;
 import info.gridworld.grid.Location;
 import java.awt.Color;
 
-public class ModifiedChameleonCritterRunner {
+public final class ModifiedChameleonCritterRunner {
+    private ModifiedChameleonCritterRunner() {}
   public static void main(String[] args) {
     ActorWorld world = new ActorWorld();
     ModifiedChameleonCritter alice = new ModifiedChameleonCritter();

@@ -8,6 +8,7 @@ public class ModifiedChameleonCritter extends Critter {
   // In Flower
   private static final double DARKENING_FACTOR = 0.05;
 
+  // change its color based on the Actors surrounded.
   public void processActors(ArrayList<Actor> actors)
     {
       // If actors is not empty, randomly select a color
@@ -16,7 +17,7 @@ public class ModifiedChameleonCritter extends Critter {
         Color toColor = actors.get(randomNumber).getColor();
         setColor(toColor);
       }
-      // same as flower
+      // darken same as flower
       else {
         Color c = getColor();
         int red = (int) (c.getRed() * (1 - DARKENING_FACTOR));
@@ -29,8 +30,9 @@ public class ModifiedChameleonCritter extends Critter {
     
     public void makeMove(Location loc)
     {
-        if (loc == null)
-            removeSelfFromGrid();
+        if (loc == null) {
+          removeSelfFromGrid();
+        }
         else {
             setDirection(getLocation().getDirectionToward(loc));
             moveTo(loc);
