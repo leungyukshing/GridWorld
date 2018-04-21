@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="TestJumper" default="run" basedir=".">
+	<property name="src.path" location="src"/>
+	<property name="dest.path" location="dest"/>
+	<property name="lib.path" location="lib"/>
+	<!-- 设置classpath -->
+	<path id="compile.path">
+        <fileset dir="${lib.path}">
+            <include name="**/*.jar"/>
+        </fileset>
+
+        <pathelement path="${dest.path}"/>
+    </path>
+
+    <!-- 清除历史编译.class -->
+	<target name="clean">
+		<delete dir="dest"/>
+	</target>
+
+	<target name="compile" depends="clean">
+		<mkdir dir="${dest.path}"/>
+		<javac srcdir="${src.path}" destdir="${dest.path}" classpathref="compile.path" includeantruntime="on"/>
+	</target>
+	
+	<target name="run" depends="compile">
+		<java classname="ZBugRunner" classpathref="compile.path" fork="true"/>
+	</target>
+	
+</project>
