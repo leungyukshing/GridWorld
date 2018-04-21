@@ -10,19 +10,22 @@ public final class QuickCrabRunner
     public static void main(String[] args)
     {
         ActorWorld world = new ActorWorld();
-        world.add(new Location(7, 5), new Rock());
-        world.add(new Location(5, 4), new Rock());
-        world.add(new Location(5, 7), new Rock());
-        world.add(new Location(7, 3), new Rock());
-        world.add(new Location(7, 8), new Flower());
-        world.add(new Location(2, 2), new Flower());
-        world.add(new Location(3, 5), new Flower());
-        world.add(new Location(3, 8), new Flower());
-        world.add(new Location(6, 5), new Bug());
-        world.add(new Location(5, 3), new Bug());
-        world.add(new Location(4, 5), new QuickCrab());
-        world.add(new Location(6, 1), new QuickCrab());
-        world.add(new Location(7, 4), new QuickCrab());
+        // condition 1
+        QuickCrab crab = new QuickCrab();
+        crab.setDirection(Location.EAST);
+        world.add(new Location(2, 1), new Rock());
+        world.add(new Location(4, 1), crab);
+
+        // condition 2
+        world.add(new Location(3, 0), new Flower());
+        world.add(new Location(5, 0), new QuickCrab());
+
+        // condition 3
+        QuickCrab crab2 = new QuickCrab();
+        crab2.setDirection(Location.SOUTH);
+        world.add(new Location(3, 4), new QuickCrab());
+        world.add(new Location(4, 4), crab2);
+        
         world.show();
     }
 }
