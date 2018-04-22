@@ -20,7 +20,7 @@ public final class ChameleonKidRunner {
     bug2.setColor(Color.PINK);
 
     // condition1
-    // change to bug1 or bug2
+    // change color to bug1 or bug2
     world.add(new Location(3, 2), alice);
     world.add(new Location(2, 2), bug1);
     world.add(new Location(4, 2), bug2);

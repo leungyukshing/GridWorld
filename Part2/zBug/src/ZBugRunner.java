@@ -30,6 +30,7 @@ public final class ZBugRunner
     private ZBugRunner() {}
     public static void main(String[] args)
     {
+        // Test whether a bug can move a 'Z'
         ActorWorld world = new ActorWorld();
         ZBug alice = new ZBug(6);
         alice.setColor(Color.ORANGE);

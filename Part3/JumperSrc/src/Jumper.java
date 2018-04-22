@@ -79,7 +79,9 @@ public class Jumper extends Actor
         if (gr == null) {
             return;
         }
+        // Find the location that adjacent to the current location
         Location loc = getLocation();
+        // Find the location that the jumper supposed to jump into
         Location next = (loc.getAdjacentLocation(getDirection())).getAdjacentLocation(getDirection());
         if (gr.isValid(next)) {
             moveTo(next);
@@ -102,6 +104,7 @@ public class Jumper extends Actor
         }
         Location loc = getLocation();
         Location next = (loc.getAdjacentLocation(getDirection())).getAdjacentLocation(getDirection());
+        // Test whethet the next location is valid
         if (!gr.isValid(next)) {
             return false;
         }

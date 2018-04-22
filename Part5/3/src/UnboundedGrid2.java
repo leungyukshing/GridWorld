@@ -6,7 +6,9 @@ import java.util.*;
 import java.awt.Color;
 
 public class UnboundedGrid2<E> extends AbstractGrid<E> {
+  // Use two-dimensional Array to store occupants
   private Object[][] occupantArray;
+  // To indicate the current size of the grid
   private int gridSize;
   private final int factor = 2;
 
@@ -104,7 +106,6 @@ public class UnboundedGrid2<E> extends AbstractGrid<E> {
                     + " is not valid");
         }
             
-        
         // Remove the object from the grid.
         E r = get(loc);
         occupantArray[loc.getRow()][loc.getCol()] = null;

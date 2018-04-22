@@ -20,11 +20,15 @@ public final class BlusterCritterRunner {
     bug2.setColor(Color.PINK);
 
     // condition1
+    // The actors'number is smaller than its courages
+    // The BlusterCritter is expected to brighten
     world.add(new Location(3, 2), alice);
     world.add(new Location(2, 2), bug1);
     world.add(new Location(4, 2), bug2);
 
     // condition2
+    // The actors'number is larger than its courages
+    // The BlusterCritter is expected to darken
     Rock rock1 = new Rock();
     Rock rock2 = new Rock();
     Rock rock3 = new Rock();

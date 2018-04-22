@@ -7,9 +7,11 @@ import java.util.HashMap;
 import java.awt.Color;
 
 public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
+  // A HashMap to store Location and Actor
   private Map<Location, E> occupantArray;
   private int rows, columns;
   
+  // Ensures at least one valid grid
   public SparseBoundedGrid2(int rows, int cols) {
     if (rows <= 0) {
       throw new IllegalArgumentException("rows <= 0");
@@ -21,6 +23,7 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
 
     this.rows = rows;
     this.columns = cols;
+
     // Initialize a HashMap
     occupantArray = new HashMap<Location, E>();
     
@@ -84,7 +87,6 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
                     + " is not valid");
         }
             
-        
         // Remove the object from the grid.
         E r = get(loc);
         occupantArray.remove(loc);

@@ -12,6 +12,8 @@ import java.awt.Color;
 
 
 public class JumperTest {
+
+  // Test the correctness by comparing the locations
   @Test
   public void testJumper1() {
     ActorWorld world = new ActorWorld();

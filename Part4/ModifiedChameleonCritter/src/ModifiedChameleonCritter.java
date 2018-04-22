@@ -17,7 +17,7 @@ public class ModifiedChameleonCritter extends Critter {
         Color toColor = actors.get(randomNumber).getColor();
         setColor(toColor);
       }
-      // darken same as flower
+      // darken the critter
       else {
         Color c = getColor();
         int red = (int) (c.getRed() * (1 - DARKENING_FACTOR));
@@ -30,6 +30,7 @@ public class ModifiedChameleonCritter extends Critter {
     
     public void makeMove(Location loc)
     {
+        // If the location is not exist, remove
         if (loc == null) {
           removeSelfFromGrid();
         }

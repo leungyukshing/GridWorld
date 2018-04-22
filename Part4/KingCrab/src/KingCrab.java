@@ -13,6 +13,7 @@ public class KingCrab extends CrabCritter {
       Location present = getLocation();
         for (Actor a : actors)
         {
+            // Get the direction that the actor from the present location
             int direction = present.getDirectionToward(a.getLocation());
             // The position that the actor suppose to move to
             Location toMove = a.getLocation().getAdjacentLocation(direction);

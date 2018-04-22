@@ -25,6 +25,7 @@ public class BlusterCritter extends Critter {
         int presentColumn = presentPosition.getCol();
         int presentRow = presentPosition.getRow();
 
+        // Calculate all actors in the 24 positions
         int neighborColumnLeft = (presentColumn - 2) < 0 ? 0 : presentColumn - 2;
         int neighborColumnRight = (presentColumn + 2) >= getGrid().getNumCols() ? getGrid().getNumCols() - 1 : presentColumn + 2;
         int neighborRowTop = (presentRow - 2) < 0 ? 0 : presentRow - 2;
@@ -33,6 +34,7 @@ public class BlusterCritter extends Critter {
         for (int i = neighborRowTop; i <= neighborRowButton; i++) {
           for (int j = neighborColumnLeft; j <= neighborColumnRight; j++) {
             Actor temp = grid.get(new Location(i, j));
+            // If there is an actor, then add it to the List
             if (temp != null) {
               result.add(temp);
             }
@@ -69,7 +71,7 @@ public class BlusterCritter extends Critter {
     {
       for (Actor a : actors)
         {
-          // Not a rock or a critter, then eat
+          // Not a rock or a critter, then eat it
             if (!(a instanceof Rock) && !(a instanceof Critter)) {
               a.removeSelfFromGrid();
             }  

@@ -30,6 +30,7 @@ public final class SpiralBugRunner
     private SpiralBugRunner() {}
     public static void main(String[] args)
     {
+        // Test whether a bug can run spiral
         ActorWorld world = new ActorWorld();
         SpiralBug alice = new SpiralBug(2);
         alice.setColor(Color.ORANGE);

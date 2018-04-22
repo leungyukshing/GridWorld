@@ -9,7 +9,7 @@ public class ChameleonKid extends ModifiedChameleonCritter {
     {
         ArrayList<Actor> result = new ArrayList<Actor>();
         ArrayList<Actor> neighbors =  getGrid().getNeighbors(getLocation());
-        // Find out those in the front or back of the critter
+        // Find out those in the front or back of the critter, and add them into the return List
         for (int i = 0; i < neighbors.size(); i++) {
           if (getLocation().getDirectionToward(neighbors.get(i).getLocation()) == 0 || getLocation().getDirectionToward(neighbors.get(i).getLocation()) == 180) {
             result.add(neighbors.get(i));

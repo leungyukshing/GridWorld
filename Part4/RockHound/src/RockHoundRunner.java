@@ -26,7 +26,7 @@ public final class RockHoundRunner {
     world.add(new Location(4, 2), bug2);
 
     // condition2
-    // eat rocks
+    // eat all rocks
     Rock rock1 = new Rock();
     Rock rock2 = new Rock();
     Rock rock3 = new Rock();

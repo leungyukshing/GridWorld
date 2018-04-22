@@ -49,8 +49,10 @@ public class SpiralBug extends Bug
         }
         else
         {
+            // Take a 90 degree turn
             turn();
             turn();
+            // To make it spiral
             sideLength++;
             steps = 0;
         }

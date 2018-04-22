@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class QuickCrab extends CrabCritter {
 
   private ArrayList<Location> getQuick() {
-    /*get the quik position*/
+    /*get the quick position*/
       ArrayList<Location> locs = new ArrayList<Location>();
       
       Location present = getLocation();
@@ -21,7 +21,7 @@ public class QuickCrab extends CrabCritter {
       /*Left*/
       if (grid.isValid(left) && grid.get(left) == null) {
         Location leftTwo = left.getAdjacentLocation(getDirection() + Location.LEFT);
-        /*valid and empty*/
+        // Valid and empty
         if (grid.isValid(leftTwo) && grid.get(leftTwo) == null) {
           locs.add(leftTwo);
         }
@@ -30,17 +30,19 @@ public class QuickCrab extends CrabCritter {
       /*Right*/
       if (grid.isValid(right) && grid.get(right) == null) {
         Location rightTwo = right.getAdjacentLocation(getDirection() + Location.RIGHT);
+        // Valid and empty
         if (grid.isValid(rightTwo) && grid.get(rightTwo) == null) {
           locs.add(rightTwo);
         }
       }
+
       return locs;
   }
 
   public ArrayList<Location> getMoveLocations()
     {
       ArrayList<Location> locs = getQuick();
-
+      // If no quickLocation, do the same thing as Crab
       if (locs.size() == 0) {
          
         int[] dirs =

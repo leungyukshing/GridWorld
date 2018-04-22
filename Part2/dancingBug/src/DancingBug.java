@@ -43,6 +43,7 @@ public class DancingBug extends Bug
      */
     public void act()
     {
+        // Take turn based on the array
         for (int i = 0; i < turns[steps]; i++) {
             turn();
         }

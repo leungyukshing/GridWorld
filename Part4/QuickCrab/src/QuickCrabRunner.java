@@ -11,6 +11,7 @@ public final class QuickCrabRunner
     {
         ActorWorld world = new ActorWorld();
         // condition 1
+        // Crab can't move two grids if there is a rock on the position
         QuickCrab crab = new QuickCrab();
         crab.setDirection(Location.EAST);
         world.add(new Location(2, 1), new Rock());
@@ -21,6 +22,7 @@ public final class QuickCrabRunner
         world.add(new Location(5, 0), new QuickCrab());
 
         // condition 3
+        // Crab don't eat crab
         QuickCrab crab2 = new QuickCrab();
         crab2.setDirection(Location.SOUTH);
         world.add(new Location(3, 4), new QuickCrab());

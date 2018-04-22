@@ -6,9 +6,11 @@ import java.util.LinkedList;
 import java.awt.Color;
 
 public class SparseBoundedGrid<E> extends AbstractGrid<E> {
+  // Use a list of LinkedList to store the occupants
   private ArrayList<LinkedList<OccupantInCol>> occupantArray;
   private int rows, columns;
   
+  // Ensures at least one valid location
   public SparseBoundedGrid(int rows, int cols) {
     if (rows <= 0) {
       throw new IllegalArgumentException("rows <= 0");
@@ -20,6 +22,7 @@ public class SparseBoundedGrid<E> extends AbstractGrid<E> {
 
     this.rows = rows;
     this.columns = cols;
+
     // Allocate memeory space
     occupantArray = new ArrayList<LinkedList<OccupantInCol>>(rows);
     for (int i = 0; i < rows; i++) {
@@ -92,7 +95,6 @@ public class SparseBoundedGrid<E> extends AbstractGrid<E> {
           throw new IllegalArgumentException("obj == null");
         }
             
-
         // Add the object to the grid.
         E oldOccupant = get(loc);
         occupantArray.get(loc.getRow()).add(new OccupantInCol(obj, loc.getCol()));

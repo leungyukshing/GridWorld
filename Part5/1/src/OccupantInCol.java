@@ -8,28 +8,28 @@ public class OccupantInCol {
   // Store the index in ArrayList
   private int colIndex;
 
-  /* Constructor*/
+  /* Constructor */
   OccupantInCol(Object object, int col) {
     this.occupant = object;
     this.colIndex = col;
   }
 
-  /*se methods for occupant*/
+  /* set methods for occupant */
   public void setOccupant(Object object) {
     this.occupant = object;
   }
 
-  /*set methods for occupant */
+  /* get methods for occupant */
   public Object getOccupant() {
     return occupant;
   }
 
-   /*set methods for column index*/
+   /* set methods for column index */
   public void setCol(int col){
     this.colIndex = col;
   }
 
-  /*get methods for column index*/
+  /* get methods for column index */
   public int getCol() {
     return colIndex;
   }

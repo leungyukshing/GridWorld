@@ -29,7 +29,8 @@ public final class DancingBugRunner
 {
     private DancingBugRunner() {}
     public static void main(String[] args)
-    {
+    {   
+        // An array to define how many turns a bug should take
         int[] myList = {1, 2, 3, 4};
         ActorWorld world = new ActorWorld();
         DancingBug alice = new DancingBug(myList);

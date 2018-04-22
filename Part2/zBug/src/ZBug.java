@@ -43,20 +43,25 @@ public class ZBug extends Bug
      * Moves to the next location of the square.
      */
     public void act()
-    {
+    {   
+        // Can move
         if (steps < sideLength && canMove())
         {
             move();
             steps++;
         }
+        // Can't move
         else
         {
+            // End flag is up
             if (flag) {
                 return;
             }
+            // Need a turn
             else if (getDirection() == 90) {
                 setDirection(225);
             }
+            // Need a turn
             else if (getDirection() == 225){
                 setDirection(90);
                 flag = true;

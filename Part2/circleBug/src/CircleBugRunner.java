@@ -29,7 +29,8 @@ public final class CircleBugRunner
 {
     private CircleBugRunner() {}
     public static void main(String[] args)
-    {
+    { 
+        // Test a bug to run a circle
         ActorWorld world = new ActorWorld();
         CircleBug alice = new CircleBug(3);
         alice.setColor(Color.ORANGE);

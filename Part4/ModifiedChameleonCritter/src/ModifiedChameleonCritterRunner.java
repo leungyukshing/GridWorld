@@ -20,11 +20,13 @@ public final class ModifiedChameleonCritterRunner {
     bug2.setColor(Color.PINK);
 
     // condition1
+    // The Critter will change color to bug1 or bug2
     world.add(new Location(3, 2), alice);
     world.add(new Location(3, 3), bug1);
     world.add(new Location(3, 1), bug2);
 
     // condition2
+    // The Critter will darken
     world.add(new Location(5, 5), bob);
 
     world.show();

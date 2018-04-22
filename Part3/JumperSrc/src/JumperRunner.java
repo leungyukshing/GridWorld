@@ -30,6 +30,7 @@ public final class JumperRunner
     private JumperRunner() {}
     public static void main(String[] args)
     {
+        // Test jumpers
         ActorWorld world = new ActorWorld();
         Jumper alice = new Jumper();
         alice.setColor(Color.ORANGE);
