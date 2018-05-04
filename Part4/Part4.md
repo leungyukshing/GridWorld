@@ -39,6 +39,12 @@ public void makeMove(Location loc)
 3. Should subclasses of Critter override the getActors method? Explain.
 
 *Answer*: Yes, if necessary. The subclasses of Critter can override the `getActors()` to look elsewhere for actors to process.
++ source code:
+```Java
+// @file:Desktop\GridWorld\grid world\Gridworld\GridWorldCode\framework\info\gridworld\actor\Critter.java
+// @line: 56
+public ArrayList<Actor> getActors()
+```
 
 4. Describe the way that a critter could process actors.
 
@@ -157,6 +163,12 @@ The source code for the CrabCritter class is reproduced at the end of this part 
 1. Why doesn’t CrabCritter override the processActors method?
 
 *Answer*: Because the CrabCritter inherits from Critters. Both Critter and CrabCritter eat the actors(except for critters and rocks) in the actors list. So their codes are the same. There is no need to override it.
++ source code:
+```Java
+// @file:Desktop\GridWorld\grid world\Gridworld\GridWorldCode\framework\info\gridworld\actor\Critter.java
+// @line: 71
+public void processActors(ArrayList<Actor> actors)
+```
 
 2. Describe the process a CrabCritter uses to find and eat other actors. Does it always eat all neighboring actors? Explain.
 
@@ -196,13 +208,51 @@ for (Location loc : getLocationsInDirections(dirs))
 4. If a CrabCritter has location (3, 4) and faces south, what are the possible locations for actors that are returned by a call to the getActors method?
 
 *Answer*: Location(4,3), Location(4,4), Location(4,5)
++ source code:
+```Java
+// @file:Desktop\GridWorld\grid world\Gridworld\GridWorldCode\projects\critters\CrabCritter
+// @line: 44~57
+public ArrayList<Actor> getActors()
+    {
+        ArrayList<Actor> actors = new ArrayList<Actor>();
+        int[] dirs =
+            { Location.AHEAD, Location.HALF_LEFT, Location.HALF_RIGHT };
+        for (Location loc : getLocationsInDirections(dirs))
+        {
+            Actor a = getGrid().get(loc);
+            if (a != null)
+                actors.add(a);
+        }
+
+        return actors;
+    }
+```
 
 5. What are the similarities and differences between the movements of a CrabCritter and a Critter?
 
 *Answer*:
   + Similarities: Both them move themselves without changing their direction. That mean, before the move it face South, then after the move it still face South.
   + Differences: ① A Critter can move to any locations that are neighboring. But a CrabCritter can only move to left or right, just like a crab.② A Critter can not turn to another direction when it can not move. But a CrabCritter can turn 90 degrees left or right if it can not move.
-
+  + source code:
+  ```Java
+  // @file:Desktop\GridWorld\grid world\Gridworld\GridWorldCode\projects\critters\CrabCritter
+  // @line: 77~91
+  public void makeMove(Location loc)
+      {
+          if (loc.equals(getLocation()))
+          {
+              double r = Math.random();
+              int angle;
+              if (r < 0.5)
+                  angle = Location.LEFT;
+              else
+                  angle = Location.RIGHT;
+              setDirection(getDirection() + angle);
+          }
+          else
+              super.makeMove(loc);
+      }
+  ```
 6. How does a CrabCritter determine when it turns instead of moving?
 
 *Answer*: By checking whether the location which is supposed to move into is the same as where it occupies. If two location is the same, that means it cannot move and a turn is needed. Otherwise, the CrabCritter moves.

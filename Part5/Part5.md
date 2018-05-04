@@ -177,7 +177,7 @@ The source code for the UnboundedGrid class is in Appendix D.
 + source code:
 ```Java
 // @file:Desktop\GridWorld\grid world\Gridworld\GridWorldCode\framework\info\gridworld\grid\Location.java
-// @lineL 205
+// @line: 205
 public boolean equals(Object other)
 // @line: 218
 public int hashCode()
@@ -188,10 +188,46 @@ public int compareTo(Object other)
 2. Why are the checks for null included in the get, put, and remove methods? Why are no such checks included in the corresponding methods for the BoundedGrid?
 
 *Answer*: Because we may access the HashMap in these methods. Keys in HashMap cannot be null. And the `isValid()` method in UnboundedGrid return true if the location's column and row is non-negative. So checks for null is necessary. The BoundedGrid has the `isValid()` method to tell whether a location is null.
++ source code:
+```Java
+// @file:Desktop\GridWorld\grid world\Gridworld\GridWorldCode\framework\info\gridworld\grid\UnboundedGrid.java
+// @line: 53~56
+public boolean isValid(Location loc)
+{
+    return true;
+}
+```
 
 3. What is the average time complexity (Big-Oh) for the three methods: get, put, and remove? What would it be if a TreeMap were used instead of a HashMap?
 
 *Answer*: The time complexity of `get()`, `put()`, `remove()` are all *O(1)*. Because hash table is used. If TreeMap were used, all the time complexity will be *O(log n)*.
++ source code:
+```Java
+// @file:Desktop\GridWorld\grid world\Gridworld\GridWorldCode\framework\info\gridworld\grid\UnboundedGrid.java
+// @line: 66~87
+public E get(Location loc)
+    {
+        if (loc == null)
+            throw new NullPointerException("loc == null");
+        return occupantMap.get(loc);
+    }
+
+    public E put(Location loc, E obj)
+    {
+        if (loc == null)
+            throw new NullPointerException("loc == null");
+        if (obj == null)
+            throw new NullPointerException("obj == null");
+        return occupantMap.put(loc, obj);
+    }
+
+    public E remove(Location loc)
+    {
+        if (loc == null)
+            throw new NullPointerException("loc == null");
+        return occupantMap.remove(loc);
+    }
+```
 
 4. How would the behavior of this class differ, aside from time complexity, if a TreeMap were used instead of a HashMap?
 
@@ -219,6 +255,24 @@ Consider using a HashMap or TreeMap to implement the SparseBoundedGrid. How coul
 | put     |       O(c)   | O(c) | O(1) | O(log n)|
 | remove     |       O(c)        | O(c) | O(1) | O(log n)|
 
+Map中使用下标直接访问的时间复杂度为O(1)，Tree中获取某个值得时间复杂度为O(log n)，这是二叉树搜索的特性。
+对于`getOccupiedLocations()`的复杂度，由于总共只有n个非空位置，因此复杂度应该是O(r + n)，实际中取较大的一个即可。
+注意：在时间复杂度的估计中，默认ArrayList的add是非扩容的，时间复杂度为O(1)。
+
 Implement the methods specified by the Grid interface using this data structure. What is the Big-Oh efficiency of the get method? What is the efficiency of the put method when the row and column index values are within the current array bounds? What is the efficiency when the array needs to be resized?
 
 *Answer*: The time complexity of `get()` is *O(1)*. If the row and column index values are within the current array bounds, the efficiency is *O(1)*. If the array needs to be resized, the efficiency will be *O(size×size)*.
+  + source code:
+  ```Java
+  // @file:Part5\3\UnboundedGrid2.java
+  // @line: 49~57
+  public E get(Location loc)
+  {
+      if (loc == null)
+          throw new NullPointerException("loc == null");
+      if (loc.getRow() >= gridSize || loc.getCol() >= gridSize)
+        return null;
+
+      return (E) occupantArray[loc.getRow()][loc.getCol()]; // unavoidable warning
+  }
+  ```

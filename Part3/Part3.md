@@ -180,6 +180,10 @@ Location loc2 = new Location(3, 4);
 Then I can obtain a count of the empty locations in a bounded grid by using the total count to subtract the occupied count, that is
 ```Java
 int emptyCount = 'getNumRows() * getNumCols() - getOccupiedLocations
+/*source code*/
+// @file:Desktop\GridWorld\grid world\Gridworld\GridWorldCode\framework\info\gridworld\grid\Grid.java
+// @line: 85
+ArrayList<Location> getOccupiedLocations();
 ```
 
 
@@ -284,9 +288,13 @@ int emptyCount = 'getNumRows() * getNumCols() - getOccupiedLocations
 5. How can an actor turn 90 degrees to the right?
 
  *Answer*: An actor can turn 90 degrees to the right by invoking `setDirection(int newDirection)`. For example:
- ```
+ ```java
  Actor actor = new Actor();
  actor.setDirection(actor.getDirection() + Location.RIGHT);
+/*source code*/
+ // @file:Desktop\GridWorld\grid world\Gridworld\GridWorldCode\framework\info\gridworld\actor\Actor.java
+ // @line: 80
+ public void setDirection(int newDirection)
  ```
 
 
