@@ -25,7 +25,11 @@
 		<javac srcdir="${test.path}" destdir="${dest.path}" classpathref="compile.path" includeantruntime="on"/>
 	</target>
 	
-	<target name="junit" depends="compile">
+	<target name="run" depends="compile">
+		<java classname="ImageReaderRunner" classpathref="compile.path" fork="true"/>
+	</target>
+
+	<target name="junit" depends="run">
 		<junit printsummary="true">
 			<formatter type="xml" usefile="true"/>
 			<classpath refid="compile.path"/>

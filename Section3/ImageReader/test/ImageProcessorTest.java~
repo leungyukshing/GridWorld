@@ -1,0 +1,415 @@
+import static org.junit.Assert.*;
+import org.junit.Test;
+import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
+import java.awt.Image;
+import javax.imageio.ImageIO;
+
+
+public class ImageProcessorTest {
+
+  /* variables for photo 1 */
+  /* origin image */
+  private String filepathOne = "1.bmp";
+
+  /* red image */
+  private String filepathRedOne = "1_red_goal.bmp";
+
+  /* green image */
+  private String filepathGreenOne = "1_green_goal.bmp";
+
+  /* blue image */
+  private String filepathBlueOne = "1_blue_goal.bmp";
+
+  /* gray image */ 
+  private String filepathGrayOne = "1_gray_goal.bmp";
+
+  /* variables for photo 2 */
+  /* origin image */
+  private String filepathTwo = "2.bmp";
+
+  /* red image */
+  private String filepathRedTwo = "2_red_goal.bmp";
+
+  /* green image */
+  private String filepathGreenTwo = "2_green_goal.bmp";
+
+  /* blue image */
+  private String filepathBlueTwo = "2_blue_goal.bmp";
+
+  /* gray image */ 
+  private String filepathGrayTwo = "2_gray_goal.bmp";
+
+  /* Testing */
+  @Test
+  /* Test input */
+  public void testIOOne() {
+    try {
+      // Standared Answer
+      FileInputStream inputstream = new FileInputStream(filepathOne);
+      BufferedImage answer = ImageIO.read(inputstream);
+
+      // My Answer
+      ImplementImageIO input = new ImplementImageIO();
+      Image myImage = input.myRead(filepathOne);
+      
+      // Compare the size of the picture
+      assertEquals(myImage.getHeight(null), answer.getHeight(null));
+      assertEquals(myImage.getWidth(null), answer.getWidth(null));
+
+      // Compare every pixel in the picture
+      BufferedImage my = new BufferedImage(myImage.getWidth(null), myImage.getHeight(null), BufferedImage.TYPE_INT_RGB);  
+      my.getGraphics().drawImage(myImage, 0, 0,null);
+      for (int y = 0; y < answer.getHeight(); y++) {
+        for (int x = 0; x < answer.getWidth(); x++) {  
+              assertEquals(my.getRGB(x, y), answer.getRGB(x, y));
+        }
+      }
+          
+    }
+    catch (Exception ex) {
+      
+    }
+  }
+
+  @Test
+  /* Test Red */
+  public void testRedOne() {
+    try {
+      // Standared Answer
+      FileInputStream inputstream = new FileInputStream(filepathRedOne);
+      BufferedImage answer = ImageIO.read(inputstream);
+
+      // My Answer
+      ImplementImageIO input = new ImplementImageIO();
+      Image image = input.myRead(filepathOne);
+
+      // My Processor
+      ImplementImageProcessor myProcessor = new ImplementImageProcessor();
+      Image myImage = myProcessor.showChanelR(image);
+
+      // Compare the size of the picture
+      assertEquals(myImage.getHeight(null), answer.getHeight(null));
+      assertEquals(myImage.getWidth(null), answer.getWidth(null));
+
+      // Compare every pixel in the picture
+      BufferedImage my = new BufferedImage(myImage.getWidth(null), myImage.getHeight(null), BufferedImage.TYPE_INT_RGB);  
+      my.getGraphics().drawImage(myImage, 0, 0,null);
+      for (int y = 0; y < answer.getHeight(); y++) {
+        for (int x = 0; x < answer.getWidth(); x++) {  
+              assertEquals(my.getRGB(x, y), answer.getRGB(x, y));
+        }
+      }
+          
+    }
+    catch (Exception ex) {
+      
+    }
+  }
+
+  @Test
+  /* Test Green */
+  public void testGreenOne() {
+    try {
+      // Standared Answer
+      FileInputStream inputstream = new FileInputStream(filepathGreenOne);
+      BufferedImage answer = ImageIO.read(inputstream);
+
+      // My Answer
+      ImplementImageIO input = new ImplementImageIO();
+      Image image = input.myRead(filepathOne);
+
+      // My Processor
+      ImplementImageProcessor myProcessor = new ImplementImageProcessor();
+      Image myImage = myProcessor.showChanelG(image);
+
+      // Compare the size of the picture
+      assertEquals(myImage.getHeight(null), answer.getHeight(null));
+      assertEquals(myImage.getWidth(null), answer.getWidth(null));
+
+      // Compare every pixel in the picture
+      BufferedImage my = new BufferedImage(myImage.getWidth(null), myImage.getHeight(null), BufferedImage.TYPE_INT_RGB);  
+      my.getGraphics().drawImage(myImage, 0, 0,null);
+      for (int y = 0; y < answer.getHeight(); y++) {
+        for (int x = 0; x < answer.getWidth(); x++) {  
+              assertEquals(my.getRGB(x, y), answer.getRGB(x, y));
+        }
+      }
+          
+    }
+    catch (Exception ex) {
+      
+    }
+  }
+
+  @Test
+  /* Test Blue */
+  public void testBlueOne() {
+    try {
+      // Standared Answer
+      FileInputStream inputstream = new FileInputStream(filepathBlueOne);
+      BufferedImage answer = ImageIO.read(inputstream);
+
+      // My Answer
+      ImplementImageIO input = new ImplementImageIO();
+      Image image = input.myRead(filepathOne);
+
+      // My Processor
+      ImplementImageProcessor myProcessor = new ImplementImageProcessor();
+      Image myImage = myProcessor.showChanelB(image);
+
+      // Compare the size of the picture
+      assertEquals(myImage.getHeight(null), answer.getHeight(null));
+      assertEquals(myImage.getWidth(null), answer.getWidth(null));
+
+      // Compare every pixel in the picture
+      BufferedImage my = new BufferedImage(myImage.getWidth(null), myImage.getHeight(null), BufferedImage.TYPE_INT_RGB);  
+      my.getGraphics().drawImage(myImage, 0, 0,null);
+      for (int y = 0; y < answer.getHeight(); y++) {
+        for (int x = 0; x < answer.getWidth(); x++) {  
+              assertEquals(my.getRGB(x, y), answer.getRGB(x, y));
+        }
+      }
+          
+    }
+    catch (Exception ex) {
+      
+    }
+  }
+
+  @Test
+  /* Test Gray */
+  public void testGrayOne() {
+    try {
+      // Standared Answer
+      FileInputStream inputstream = new FileInputStream(filepathGrayOne);
+      BufferedImage answer = ImageIO.read(inputstream);
+
+      // My Answer
+      ImplementImageIO input = new ImplementImageIO();
+      Image image = input.myRead(filepathOne);
+
+      // My Processor
+      ImplementImageProcessor myProcessor = new ImplementImageProcessor();
+      Image myImage = myProcessor.showGray(image);
+
+      // Compare the size of the picture
+      assertEquals(myImage.getHeight(null), answer.getHeight(null));
+      assertEquals(myImage.getWidth(null), answer.getWidth(null));
+
+      // Compare every pixel in the picture
+      BufferedImage my = new BufferedImage(myImage.getWidth(null), myImage.getHeight(null), BufferedImage.TYPE_INT_RGB);  
+      my.getGraphics().drawImage(myImage, 0, 0,null);
+      for (int y = 0; y < answer.getHeight(); y++) {
+        for (int x = 0; x < answer.getWidth(); x++) {  
+              assertEquals(my.getRGB(x, y), answer.getRGB(x, y));
+        }
+      }
+          
+    }
+    catch (Exception ex) {
+      
+    }
+  }
+
+  @Test
+  /* Test input */
+  public void testIOTwo() {
+    try {
+      // Standared Answer
+      FileInputStream inputstream = new FileInputStream(filepathTwo);
+      BufferedImage answer = ImageIO.read(inputstream);
+
+      // My Answer
+      ImplementImageIO input = new ImplementImageIO();
+      Image myImage = input.myRead(filepathTwo);
+      
+      // Compare the size of the picture
+      assertEquals(myImage.getHeight(null), answer.getHeight(null));
+      assertEquals(myImage.getWidth(null), answer.getWidth(null));
+
+      // Compare every pixel in the picture
+      BufferedImage my = new BufferedImage(myImage.getWidth(null), myImage.getHeight(null), BufferedImage.TYPE_INT_RGB);  
+      my.getGraphics().drawImage(myImage, 0, 0,null);
+      for (int y = 0; y < answer.getHeight(); y++) {
+        for (int x = 0; x < answer.getWidth(); x++) {  
+              assertEquals(my.getRGB(x, y), answer.getRGB(x, y));
+        }
+      }
+          
+    }
+    catch (Exception ex) {
+      
+    }
+  }
+
+  @Test
+  /* Test Red */
+  public void testRedTwo() {
+    try {
+      // Standared Answer
+      FileInputStream inputstream = new FileInputStream(filepathRedTwo);
+      BufferedImage answer = ImageIO.read(inputstream);
+
+      // My Answer
+      ImplementImageIO input = new ImplementImageIO();
+      Image image = input.myRead(filepathTwo);
+
+      // My Processor
+      ImplementImageProcessor myProcessor = new ImplementImageProcessor();
+      Image myImage = myProcessor.showChanelR(image);
+
+      // Compare the size of the picture
+      assertEquals(myImage.getHeight(null), answer.getHeight(null));
+      assertEquals(myImage.getWidth(null), answer.getWidth(null));
+
+      // Compare every pixel in the picture
+      BufferedImage my = new BufferedImage(myImage.getWidth(null), myImage.getHeight(null), BufferedImage.TYPE_INT_RGB);  
+      my.getGraphics().drawImage(myImage, 0, 0,null);
+      for (int y = 0; y < answer.getHeight(); y++) {
+        for (int x = 0; x < answer.getWidth(); x++) {  
+              assertEquals(my.getRGB(x, y), answer.getRGB(x, y));
+        }
+      }
+          
+    }
+    catch (Exception ex) {
+      
+    }
+  }
+
+  @Test
+  /* Test Green */
+  public void testGreenTwo() {
+    try {
+      // Standared Answer
+      FileInputStream inputstream = new FileInputStream(filepathGreenTwo);
+      BufferedImage answer = ImageIO.read(inputstream);
+
+      // My Answer
+      ImplementImageIO input = new ImplementImageIO();
+      Image image = input.myRead(filepathTwo);
+
+      // My Processor
+      ImplementImageProcessor myProcessor = new ImplementImageProcessor();
+      Image myImage = myProcessor.showChanelG(image);
+
+      // Compare the size of the picture
+      assertEquals(myImage.getHeight(null), answer.getHeight(null));
+      assertEquals(myImage.getWidth(null), answer.getWidth(null));
+
+      // Compare every pixel in the picture
+      BufferedImage my = new BufferedImage(myImage.getWidth(null), myImage.getHeight(null), BufferedImage.TYPE_INT_RGB);  
+      my.getGraphics().drawImage(myImage, 0, 0,null);
+      for (int y = 0; y < answer.getHeight(); y++) {
+        for (int x = 0; x < answer.getWidth(); x++) {  
+              assertEquals(my.getRGB(x, y), answer.getRGB(x, y));
+        }
+      }
+          
+    }
+    catch (Exception ex) {
+      
+    }
+  }
+
+  @Test
+  /* Test Blue */
+  public void testBlueTwo() {
+    try {
+      // Standared Answer
+      FileInputStream inputstream = new FileInputStream(filepathBlueTwo);
+      BufferedImage answer = ImageIO.read(inputstream);
+
+      // My Answer
+      ImplementImageIO input = new ImplementImageIO();
+      Image image = input.myRead(filepathTwo);
+
+      // My Processor
+      ImplementImageProcessor myProcessor = new ImplementImageProcessor();
+      Image myImage = myProcessor.showChanelB(image);
+
+      // Compare the size of the picture
+      assertEquals(myImage.getHeight(null), answer.getHeight(null));
+      assertEquals(myImage.getWidth(null), answer.getWidth(null));
+
+      // Compare every pixel in the picture
+      BufferedImage my = new BufferedImage(myImage.getWidth(null), myImage.getHeight(null), BufferedImage.TYPE_INT_RGB);  
+      my.getGraphics().drawImage(myImage, 0, 0,null);
+      for (int y = 0; y < answer.getHeight(); y++) {
+        for (int x = 0; x < answer.getWidth(); x++) {  
+              assertEquals(my.getRGB(x, y), answer.getRGB(x, y));
+        }
+      }
+          
+    }
+    catch (Exception ex) {
+      
+    }
+    
+  }
+
+  @Test
+  /* Test Gray */
+  public void testGrayTwo() {
+    try {
+      aux(filepathGrayTwo, filepathTwo);
+      /*
+      // Standared Answer
+      FileInputStream inputstream = new FileInputStream(filepathGrayTwo);
+      BufferedImage answer = ImageIO.read(inputstream);
+
+      // My Answer
+      ImplementImageIO input = new ImplementImageIO();
+      Image image = input.myRead(filepathTwo);
+
+      // My Processor
+      ImplementImageProcessor myProcessor = new ImplementImageProcessor();
+      Image myImage = myProcessor.showGray(image);
+
+      // Compare the size of the picture
+      assertEquals(myImage.getHeight(null), answer.getHeight(null));
+      assertEquals(myImage.getWidth(null), answer.getWidth(null));
+
+      // Compare every pixel in the picture
+      BufferedImage my = new BufferedImage(myImage.getWidth(null), myImage.getHeight(null), BufferedImage.TYPE_INT_RGB);  
+      my.getGraphics().drawImage(myImage, 0, 0,null);
+      for (int y = 0; y < answer.getHeight(); y++) {
+        for (int x = 0; x < answer.getWidth(); x++) {  
+          assertEquals(my.getRGB(x, y), answer.getRGB(x, y));
+        }
+      }
+      */
+    }
+    catch (Exception ex) {
+      
+    }
+  }
+
+  private void aux(String path1, String path2) {
+     // Standared Answer
+      FileInputStream inputstream = new FileInputStream(path1);
+      BufferedImage answer = ImageIO.read(inputstream);
+
+      // My Answer
+      ImplementImageIO input = new ImplementImageIO();
+      Image image = input.myRead(path2);
+
+      // My Processor
+      ImplementImageProcessor myProcessor = new ImplementImageProcessor();
+      Image myImage = myProcessor.showGray(image);
+
+      // Compare the size of the picture
+      assertEquals(myImage.getHeight(null), answer.getHeight(null));
+      assertEquals(myImage.getWidth(null), answer.getWidth(null));
+
+      // Compare every pixel in the picture
+      BufferedImage my = new BufferedImage(myImage.getWidth(null), myImage.getHeight(null), BufferedImage.TYPE_INT_RGB);  
+      my.getGraphics().drawImage(myImage, 0, 0,null);
+      for (int y = 0; y < answer.getHeight(); y++) {
+        for (int x = 0; x < answer.getWidth(); x++) {  
+          assertEquals(my.getRGB(x, y), answer.getRGB(x, y));
+        }
+      }
+  }
+}

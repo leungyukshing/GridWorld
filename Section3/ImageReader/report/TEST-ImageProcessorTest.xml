@@ -1,550 +1,87 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="LAPTOP-QPRR3A3L" name="ImageProcessorTest" skipped="0" tests="10" time="0.11" timestamp="2018-05-03T14:58:23">
+<testsuite errors="0" failures="0" hostname="vinzor" name="ImageProcessorTest" tests="10" time="14.713" timestamp="2018-05-05T16:54:54">
   <properties>
-    <property name="sun.desktop" value="windows" />
-    <property name="ant.library.dir" value="C:\apache-ant-1.10.3\lib" />
-    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
-    <property name="ant.file.type" value="file" />
-    <property name="file.encoding.pkg" value="sun.io" />
-    <property name="java.specification.version" value="9" />
-    <property name="ant.project.name" value="TestImageProcessorJunit" />
-    <property name="sun.cpu.isalist" value="amd64" />
-    <property name="report.path" value="C:\Users\梁育诚\Desktop\ImageReader\report" />
-    <property name="sun.jnu.encoding" value="GBK" />
-    <property name="java.class.path" value="C:\apache-ant-1.10.3\lib\ant-launcher.jar;C:\Users\梁育诚\Desktop\ImageReader\.\;C:\Program Files\Java\jdk-9.0.4\lib\;C:\apache-ant-1.10.3\lib\ant-antlr.jar;C:\apache-ant-1.10.3\lib\ant-apache-bcel.jar;C:\apache-ant-1.10.3\lib\ant-apache-bsf.jar;C:\apache-ant-1.10.3\lib\ant-apache-log4j.jar;C:\apache-ant-1.10.3\lib\ant-apache-oro.jar;C:\apache-ant-1.10.3\lib\ant-apache-regexp.jar;C:\apache-ant-1.10.3\lib\ant-apache-resolver.jar;C:\apache-ant-1.10.3\lib\ant-apache-xalan2.jar;C:\apache-ant-1.10.3\lib\ant-commons-logging.jar;C:\apache-ant-1.10.3\lib\ant-commons-net.jar;C:\apache-ant-1.10.3\lib\ant-jai.jar;C:\apache-ant-1.10.3\lib\ant-javamail.jar;C:\apache-ant-1.10.3\lib\ant-jdepend.jar;C:\apache-ant-1.10.3\lib\ant-jmf.jar;C:\apache-ant-1.10.3\lib\ant-jsch.jar;C:\apache-ant-1.10.3\lib\ant-junit.jar;C:\apache-ant-1.10.3\lib\ant-junit4.jar;C:\apache-ant-1.10.3\lib\ant-junitlauncher.jar;C:\apache-ant-1.10.3\lib\ant-launcher.jar;C:\apache-ant-1.10.3\lib\ant-netrexx.jar;C:\apache-ant-1.10.3\lib\ant-swing.jar;C:\apache-ant-1.10.3\lib\ant-testutil.jar;C:\apache-ant-1.10.3\lib\ant-xz.jar;C:\apache-ant-1.10.3\lib\ant.jar" />
-    <property name="lib.path" value="C:\Users\梁育诚\Desktop\ImageReader\lib" />
-    <property name="java.vm.vendor" value="Oracle Corporation" />
-    <property name="sun.arch.data.model" value="64" />
-    <property name="user.variant" value="" />
-    <property name="java.vendor.url" value="http://java.oracle.com/" />
-    <property name="user.timezone" value="" />
-    <property name="java.vm.specification.version" value="9" />
-    <property name="os.name" value="Windows 10" />
-    <property name="sun.java.launcher" value="SUN_STANDARD" />
-    <property name="user.country" value="CN" />
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-9.0.4\bin" />
-    <property name="sun.java.command" value="org.apache.tools.ant.launch.Launcher -cp .;C:\Program Files\Java\jdk-9.0.4\lib;" />
-    <property name="jdk.debug" value="release" />
-    <property name="ant.file.TestImageProcessorJunit" value="C:\Users\梁育诚\Desktop\ImageReader\build.xml" />
-    <property name="sun.cpu.endian" value="little" />
-    <property name="user.home" value="C:\Users\梁育诚" />
-    <property name="user.language" value="zh" />
-    <property name="sun.stderr.encoding" value="ms936" />
-    <property name="java.specification.vendor" value="Oracle Corporation" />
-    <property name="java.home" value="C:\Program Files\Java\jdk-9.0.4" />
-    <property name="basedir" value="C:\Users\梁育诚\Desktop\ImageReader" />
-    <property name="file.separator" value="\" />
-    <property name="java.vm.compressedOopsMode" value="Zero based" />
-    <property name="sun.stdout.encoding" value="ms936" />
-    <property name="line.separator" value="&#xd;&#xa;" />
-    <property name="ant.java.version" value="9" />
-    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
-    <property name="java.specification.name" value="Java Platform API Specification" />
-    <property name="src.path" value="C:\Users\梁育诚\Desktop\ImageReader\src" />
-    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
-    <property name="user.script" value="" />
-    <property name="ant.file.type.TestImageProcessorJunit" value="file" />
-    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
-    <property name="java.runtime.version" value="9.0.4+11" />
-    <property name="user.name" value="梁育诚" />
-    <property name="ant.file" value="C:\Users\梁育诚\Desktop\ImageReader\build.xml" />
-    <property name="path.separator" value=";" />
-    <property name="os.version" value="10.0" />
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
-    <property name="file.encoding" value="GBK" />
     <property name="ant.project.invoked-targets" value="junit" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/jdk1.8.0_91/jre/lib/amd64" />
+    <property name="java.vm.version" value="25.91-b14" />
+    <property name="ant.library.dir" value="/usr/share/ant/lib" />
+    <property name="ant.file.TestImageProcessorJunit" value="/home/administrator/Desktop/GridWorld/Section3/ImageReader/build.xml" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.8.2 compiled on December 3 2011" />
+    <property name="ant.java.version" value="1.7" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="path.separator" value=":" />
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
-    <property name="dest.path" value="C:\Users\梁育诚\Desktop\ImageReader\dest" />
-    <property name="ant.core.lib" value="C:\apache-ant-1.10.3\lib\ant.jar" />
-    <property name="java.vendor.url.bug" value="http://bugreport.java.com/bugreport/" />
-    <property name="java.io.tmpdir" value="C:\Users\梁育诚\AppData\Local\Temp\" />
-    <property name="java.version" value="9.0.4" />
-    <property name="user.dir" value="C:\Users\梁育诚\Desktop\ImageReader" />
-    <property name="os.arch" value="amd64" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="user.country" value="US" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="sun.os.patch.level" value="unknown" />
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
-    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
-    <property name="ant.home" value="C:\apache-ant-1.10.3" />
-    <property name="sun.os.patch.level" value="" />
-    <property name="ant.version" value="Apache Ant(TM) version 1.10.3 compiled on March 24 2018" />
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-9.0.4\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\梁育诚\Downloads\cmder\bin;C:\Users\梁育诚\Downloads\cmder\vendor\git-for-windows\cmd;C:\Users\梁育诚\Downloads\cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\Users\梁育诚\Downloads\cmder\vendor\conemu-maximus5;C:\Users\梁育诚\Downloads\cmder\vendor\conemu-maximus5\ConEmu;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Dev-Cpp\MinGW64\bin;C:\Program Files\nodejs\;C:\Program Files\nodejs\node_modules;C:\Mongodb\bin\;C:\Program Files (x86)\Sublime Text 3;C:\Program Files\MATLAB\R2016b\runtime\win64;C:\Program Files\MATLAB\R2016b\bin;C:\Program Files\MATLAB\R2016b\polyspace\bin;C:\Program Files\dotnet\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\apache-ant-1.10.3\bin;C:\Users\梁育诚\AppData\Local\Microsoft\WindowsApps;C:\Users\梁育诚\Downloads\cmder;C:\Users\梁育诚\AppData\Roaming\npm;C:\mysql-5.7.20-winx64\bin;C:\Program Files\Java\jdk-9.0.4\bin;C:\Users\梁育诚\AppData\Local\Microsoft\WindowsApps;C:\Users\梁育诚\AppData\Local\atom\bin;C:\Users\梁育诚\Downloads\cmder\vendor\git-for-windows\usr\bin;C:\Users\梁育诚\Downloads\cmder\vendor\git-for-windows\usr\share\vim\vim74;C:\Users\梁育诚\Downloads\cmder\;." />
-    <property name="java.vendor" value="Oracle Corporation" />
-    <property name="java.vm.info" value="mixed mode" />
-    <property name="java.vm.version" value="9.0.4+11" />
-    <property name="test.path" value="C:\Users\梁育诚\Desktop\ImageReader\test" />
-    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
-    <property name="java.class.version" value="53.0" />
+    <property name="user.dir" value="/home/administrator/Desktop/GridWorld/Section3/ImageReader" />
+    <property name="java.runtime.version" value="1.8.0_91-b14" />
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
+    <property name="basedir" value="/home/administrator/Desktop/GridWorld/Section3/ImageReader" />
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/jdk1.8.0_91/jre/lib/endorsed" />
+    <property name="os.arch" value="amd64" />
     <property name="ant.project.default-target" value="junit" />
+    <property name="java.io.tmpdir" value="/tmp" />
+    <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar" />
+    <property name="line.separator" value="&#xa;" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="os.name" value="Linux" />
+    <property name="ant.home" value="/usr/share/ant" />
+    <property name="ant.project.name" value="TestImageProcessorJunit" />
+    <property name="sun.jnu.encoding" value="UTF-8" />
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="52.0" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="lib.path" value="/home/administrator/Desktop/GridWorld/Section3/ImageReader/lib" />
+    <property name="report.path" value="/home/administrator/Desktop/GridWorld/Section3/ImageReader/report" />
+    <property name="os.version" value="3.13.0-32-generic" />
+    <property name="ant.file" value="/home/administrator/Desktop/GridWorld/Section3/ImageReader/build.xml" />
+    <property name="user.home" value="/home/administrator" />
+    <property name="src.path" value="/home/administrator/Desktop/GridWorld/Section3/ImageReader/src" />
+    <property name="user.timezone" value="" />
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob" />
+    <property name="java.specification.version" value="1.8" />
+    <property name="file.encoding" value="UTF-8" />
+    <property name="user.name" value="administrator" />
+    <property name="java.class.path" value="/usr/share/ant/lib/ant-launcher.jar:/usr/share/java/xmlParserAPIs.jar:/usr/share/java/xercesImpl.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-javamail.jar:/usr/share/ant/lib/junit.jar:/usr/share/ant/lib/ant-apache-bcel.jar:/usr/share/ant/lib/ant-apache-log4j.jar:/usr/share/ant/lib/ant-apache-regexp.jar:/usr/share/ant/lib/ant-jmf.jar:/usr/share/ant/lib/ant-launcher.jar:/usr/share/ant/lib/ant-apache-resolver.jar:/usr/share/ant/lib/ant-swing.jar:/usr/share/ant/lib/ant-apache-oro.jar:/usr/share/ant/lib/ant-apache-bsf.jar:/usr/share/ant/lib/ant-antlr.jar:/usr/share/ant/lib/ant-jsch.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-jdepend.jar:/usr/share/ant/lib/ant-commons-net.jar:/usr/share/ant/lib/ant-commons-logging.jar:/usr/share/ant/lib/ant-apache-xalan2.jar:/usr/share/ant/lib/ant-testutil.jar:/usr/share/ant/lib/ant-junit4.jar:/usr/lib/jvm/jdk1.8.0_91/lib/tools.jar" />
+    <property name="test.path" value="/home/administrator/Desktop/GridWorld/Section3/ImageReader/test" />
+    <property name="ant.file.type.TestImageProcessorJunit" value="file" />
+    <property name="java.vm.specification.version" value="1.8" />
+    <property name="java.home" value="/usr/lib/jvm/jdk1.8.0_91/jre" />
+    <property name="sun.java.command" value="org.apache.tools.ant.launch.Launcher -cp " />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="user.language" value="en" />
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="java.version" value="1.8.0_91" />
+    <property name="java.ext.dirs" value="/usr/lib/jvm/jdk1.8.0_91/jre/lib/ext:/usr/java/packages/lib/ext" />
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/jdk1.8.0_91/jre/lib/resources.jar:/usr/lib/jvm/jdk1.8.0_91/jre/lib/rt.jar:/usr/lib/jvm/jdk1.8.0_91/jre/lib/sunrsasign.jar:/usr/lib/jvm/jdk1.8.0_91/jre/lib/jsse.jar:/usr/lib/jvm/jdk1.8.0_91/jre/lib/jce.jar:/usr/lib/jvm/jdk1.8.0_91/jre/lib/charsets.jar:/usr/lib/jvm/jdk1.8.0_91/jre/lib/jfr.jar:/usr/lib/jvm/jdk1.8.0_91/jre/classes" />
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="dest.path" value="/home/administrator/Desktop/GridWorld/Section3/ImageReader/dest" />
+    <property name="file.separator" value="/" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="ant.file.type" value="file" />
+    <property name="sun.desktop" value="gnome" />
+    <property name="sun.cpu.isalist" value="" />
   </properties>
-  <testcase classname="ImageProcessorTest" name="testIOOne" time="0.015" />
-  <testcase classname="ImageProcessorTest" name="testBlueOne" time="0.0" />
-  <testcase classname="ImageProcessorTest" name="testIOTwo" time="0.0" />
-  <testcase classname="ImageProcessorTest" name="testBlueTwo" time="0.0" />
-  <testcase classname="ImageProcessorTest" name="testRedOne" time="0.0" />
-  <testcase classname="ImageProcessorTest" name="testRedTwo" time="0.0" />
-  <testcase classname="ImageProcessorTest" name="testGreenTwo" time="0.0" />
-  <testcase classname="ImageProcessorTest" name="testGrayOne" time="0.0" />
-  <testcase classname="ImageProcessorTest" name="testGrayTwo" time="0.016" />
-  <testcase classname="ImageProcessorTest" name="testGreenOne" time="0.0" />
+  <testcase classname="ImageProcessorTest" name="testIOOne" time="0.702" />
+  <testcase classname="ImageProcessorTest" name="testRedOne" time="0.587" />
+  <testcase classname="ImageProcessorTest" name="testGreenOne" time="0.554" />
+  <testcase classname="ImageProcessorTest" name="testBlueOne" time="0.556" />
+  <testcase classname="ImageProcessorTest" name="testGrayOne" time="0.563" />
+  <testcase classname="ImageProcessorTest" name="testIOTwo" time="2.359" />
+  <testcase classname="ImageProcessorTest" name="testRedTwo" time="2.322" />
+  <testcase classname="ImageProcessorTest" name="testGreenTwo" time="2.391" />
+  <testcase classname="ImageProcessorTest" name="testBlueTwo" time="2.321" />
+  <testcase classname="ImageProcessorTest" name="testGrayTwo" time="2.316" />
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[java.io.FileNotFoundException: 1.bmp (系统找不到指定的文件。)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:196)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:94)
-	at ImageProcessorTest.testIOOne(Unknown Source)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:39)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:536)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1630)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:1045)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:2187)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:853)
-	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:292)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
-	at org.apache.tools.ant.Task.perform(Task.java:350)
-	at org.apache.tools.ant.Target.execute(Target.java:448)
-	at org.apache.tools.ant.Target.performTasks(Target.java:469)
-	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
-	at org.apache.tools.ant.Project.executeTarget(Project.java:1370)
-	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
-	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
-	at org.apache.tools.ant.Main.runBuild(Main.java:849)
-	at org.apache.tools.ant.Main.startAnt(Main.java:228)
-	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:283)
-	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:101)
-java.io.FileNotFoundException: 1_blue_goal.bmp (系统找不到指定的文件。)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:196)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:94)
-	at ImageProcessorTest.testBlueOne(Unknown Source)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:39)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:536)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1630)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:1045)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:2187)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:853)
-	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:292)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
-	at org.apache.tools.ant.Task.perform(Task.java:350)
-	at org.apache.tools.ant.Target.execute(Target.java:448)
-	at org.apache.tools.ant.Target.performTasks(Target.java:469)
-	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
-	at org.apache.tools.ant.Project.executeTarget(Project.java:1370)
-	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
-	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
-	at org.apache.tools.ant.Main.runBuild(Main.java:849)
-	at org.apache.tools.ant.Main.startAnt(Main.java:228)
-	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:283)
-	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:101)
-java.io.FileNotFoundException: 2.bmp (系统找不到指定的文件。)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:196)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:94)
-	at ImageProcessorTest.testIOTwo(Unknown Source)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:39)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:536)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1630)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:1045)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:2187)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:853)
-	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:292)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
-	at org.apache.tools.ant.Task.perform(Task.java:350)
-	at org.apache.tools.ant.Target.execute(Target.java:448)
-	at org.apache.tools.ant.Target.performTasks(Target.java:469)
-	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
-	at org.apache.tools.ant.Project.executeTarget(Project.java:1370)
-	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
-	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
-	at org.apache.tools.ant.Main.runBuild(Main.java:849)
-	at org.apache.tools.ant.Main.startAnt(Main.java:228)
-	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:283)
-	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:101)
-java.io.FileNotFoundException: 2_blue_goal.bmp (系统找不到指定的文件。)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:196)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:94)
-	at ImageProcessorTest.testBlueTwo(Unknown Source)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:39)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:536)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1630)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:1045)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:2187)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:853)
-	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:292)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
-	at org.apache.tools.ant.Task.perform(Task.java:350)
-	at org.apache.tools.ant.Target.execute(Target.java:448)
-	at org.apache.tools.ant.Target.performTasks(Target.java:469)
-	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
-	at org.apache.tools.ant.Project.executeTarget(Project.java:1370)
-	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
-	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
-	at org.apache.tools.ant.Main.runBuild(Main.java:849)
-	at org.apache.tools.ant.Main.startAnt(Main.java:228)
-	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:283)
-	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:101)
-java.io.FileNotFoundException: 1_red_goal.bmp (系统找不到指定的文件。)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:196)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:94)
-	at ImageProcessorTest.testRedOne(Unknown Source)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:39)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:536)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1630)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:1045)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:2187)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:853)
-	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:292)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
-	at org.apache.tools.ant.Task.perform(Task.java:350)
-	at org.apache.tools.ant.Target.execute(Target.java:448)
-	at org.apache.tools.ant.Target.performTasks(Target.java:469)
-	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
-	at org.apache.tools.ant.Project.executeTarget(Project.java:1370)
-	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
-	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
-	at org.apache.tools.ant.Main.runBuild(Main.java:849)
-	at org.apache.tools.ant.Main.startAnt(Main.java:228)
-	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:283)
-	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:101)
-java.io.FileNotFoundException: 2_red_goal.bmp (系统找不到指定的文件。)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:196)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:94)
-	at ImageProcessorTest.testRedTwo(Unknown Source)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:39)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:536)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1630)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:1045)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:2187)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:853)
-	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:292)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
-	at org.apache.tools.ant.Task.perform(Task.java:350)
-	at org.apache.tools.ant.Target.execute(Target.java:448)
-	at org.apache.tools.ant.Target.performTasks(Target.java:469)
-	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
-	at org.apache.tools.ant.Project.executeTarget(Project.java:1370)
-	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
-	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
-	at org.apache.tools.ant.Main.runBuild(Main.java:849)
-	at org.apache.tools.ant.Main.startAnt(Main.java:228)
-	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:283)
-	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:101)
-java.io.FileNotFoundException: 2_green_goal.bmp (系统找不到指定的文件。)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:196)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:94)
-	at ImageProcessorTest.testGreenTwo(Unknown Source)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:39)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:536)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1630)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:1045)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:2187)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:853)
-	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:292)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
-	at org.apache.tools.ant.Task.perform(Task.java:350)
-	at org.apache.tools.ant.Target.execute(Target.java:448)
-	at org.apache.tools.ant.Target.performTasks(Target.java:469)
-	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
-	at org.apache.tools.ant.Project.executeTarget(Project.java:1370)
-	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
-	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
-	at org.apache.tools.ant.Main.runBuild(Main.java:849)
-	at org.apache.tools.ant.Main.startAnt(Main.java:228)
-	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:283)
-	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:101)
-java.io.FileNotFoundException: 1_gray_goal.bmp (系统找不到指定的文件。)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:196)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:94)
-	at ImageProcessorTest.testGrayOne(Unknown Source)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:39)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:536)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1630)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:1045)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:2187)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:853)
-	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:292)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
-	at org.apache.tools.ant.Task.perform(Task.java:350)
-	at org.apache.tools.ant.Target.execute(Target.java:448)
-	at org.apache.tools.ant.Target.performTasks(Target.java:469)
-	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
-	at org.apache.tools.ant.Project.executeTarget(Project.java:1370)
-	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
-	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
-	at org.apache.tools.ant.Main.runBuild(Main.java:849)
-	at org.apache.tools.ant.Main.startAnt(Main.java:228)
-	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:283)
-	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:101)
-java.io.FileNotFoundException: 2_gray_goal.bmp (系统找不到指定的文件。)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:196)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:94)
-	at ImageProcessorTest.testGrayTwo(Unknown Source)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:39)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:536)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1630)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:1045)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:2187)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:853)
-	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:292)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
-	at org.apache.tools.ant.Task.perform(Task.java:350)
-	at org.apache.tools.ant.Target.execute(Target.java:448)
-	at org.apache.tools.ant.Target.performTasks(Target.java:469)
-	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
-	at org.apache.tools.ant.Project.executeTarget(Project.java:1370)
-	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
-	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
-	at org.apache.tools.ant.Main.runBuild(Main.java:849)
-	at org.apache.tools.ant.Main.startAnt(Main.java:228)
-	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:283)
-	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:101)
-java.io.FileNotFoundException: 1_green_goal.bmp (系统找不到指定的文件。)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:196)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:139)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:94)
-	at ImageProcessorTest.testGreenOne(Unknown Source)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:39)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:536)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeInVM(JUnitTask.java:1630)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:1045)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.executeOrQueue(JUnitTask.java:2187)
-	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTask.execute(JUnitTask.java:853)
-	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:292)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
-	at org.apache.tools.ant.Task.perform(Task.java:350)
-	at org.apache.tools.ant.Target.execute(Target.java:448)
-	at org.apache.tools.ant.Target.performTasks(Target.java:469)
-	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
-	at org.apache.tools.ant.Project.executeTarget(Project.java:1370)
-	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
-	at org.apache.tools.ant.Project.executeTargets(Project.java:1260)
-	at org.apache.tools.ant.Main.runBuild(Main.java:849)
-	at org.apache.tools.ant.Main.startAnt(Main.java:228)
-	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:283)
-	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:101)
-]]></system-err>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>
