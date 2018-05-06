@@ -49,51 +49,52 @@ public class Solution extends Jigsaw {
         this.endJNode = new JigsawNode(eNode);
         this.currentJNode = null;
         
-        // ���ʽڵ�������29000������Ϊ����ʧ��
+        // Set the constant variables
         final int MAX_NODE_NUM = 29000;
         final int DIRS = 4;
         
-        // ���������
+        // reset the searchnumber and searchpath
         this.searchedNodesNum = 0;
         this.solutionPath = null;
         
-        // ��1������ʼ�ڵ����exploreList��
+        // Put the beginJNode into two list
         this.visitedList.add(this.beginJNode);
         exploreList.add(this.beginJNode);
         
-        // ��2)���exploreListΪ�գ����߷��ʽڵ�������MAX_NODE_NUM��
-        //  ������ʧ�ܣ������޽�
+        // If the number is smaller than 29000 and the exploreList is not emplty, loops
+        //  Else, the search is failed
         while (this.searchedNodesNum < MAX_NODE_NUM && !exploreList.isEmpty()) {
-        	// ���ʴ�����1
+        	// update the search time
         	this.searchedNodesNum++;
         	
-        	// (2-1)ȡ��exploreList��ͷ�ڵ㣬������Ӷ�����pop��
+        	// (2-1)Add the current node into the exploreList
         	this.currentJNode = exploreList.poll();
-        	// ��cuurentJNode����ֹ״̬���������ɹ�������ѭ��
+        	// If the current node is equal to the endJNode, that means we find a path
+          // Search succeed
         	if(this.currentJNode.equals(eNode)) {
-        		// ��÷��ʵ���ֹ״̬������·��
+        		// Get the path from the begin to the end
         		this.getPath();
         		break;
         	}
         	
-        	// ������ǰ�ڵ���ĸ���״̬
+        	// Create four child nodes of the present node
         	JigsawNode[] nextNodes = new JigsawNode[] {
         		new JigsawNode(this.currentJNode), new JigsawNode(this.currentJNode),
         		new JigsawNode(this.currentJNode), new JigsawNode(this.currentJNode)};
         	
-        	// �����ĸ���״̬�����ƶ�
+        	// Get the four different directions
         	for (int i = 0; i < 4; i++) {
-        		// �����i�����ƶ�������ģ����ƶ����״̬Ϊ�����ʹ�
+        		// Make sure the state has not been visited
         		if (nextNodes[i].move(i) && !this.visitedList.contains(nextNodes[i])) {
-        			// ����ǰ�ڵ����״̬�����ѷ��ֵļ����У�ȷ����״̬�����ظ�����
+        			// Now we visit this node
         			this.visitedList.add(nextNodes[i]);
-        			// ����ǰ�ڵ����״̬�����ѷ��ֵ�δ�����ʵĶ����У�ȷ����״̬�л��ᱻ����
+        			// And we put to the queue, later we may process it
         			exploreList.add(nextNodes[i]);
         		}
         	}
         }
         
-        // ��ӡ������Ϣ
+        // Print the search result
         System.out.println("Jigsaw BFSearch Result:");
         System.out.println("Begin state:" + this.getBeginJNode().toString());
         System.out.println("End state:" + this.getEndJNode().toString());
@@ -122,9 +123,9 @@ public class Solution extends Jigsaw {
             }
         }
         
-        int t = 0; // ���зŴ�λ������������ȷλ�õľ���֮��
+        int t = 0; // The distance from the wrong position to the right position
         for (int i = 1; i <= dimension * dimension; i++) {
-        	// ���հ�λ���⣬�����ǰNode�ĵ�i��Ԫ���±겻��i����λ�ò���ȷ
+        	// If is wrong, calculate the distance
         	if (jNode.getNodesState()[i] != i && jNode.getNodesState()[i] != 0) {
         		int rightRow = (i-1) / dimension;
         		int rightColumn = (i-1) % dimension;
@@ -136,17 +137,16 @@ public class Solution extends Jigsaw {
         	}
         }
         
-        int u = 0; // ���зŴ�λ���������
+        int u = 0; // The number of wrong position
         for (int i = 1; i <= dimension * dimension; i++) {
-        	// ���հ�λ���⣬�����ǰNode�ĵ�i��Ԫ���±겻��i����λ�ò���ȷ
         	if (jNode.getNodesState()[i] != i && jNode.getNodesState()[i] != 0) {
         		u++;
         	}
         }
-        // ����Ȩ��
+        // Give the weighs of three value
         int []weight = {3, 10, 3};
         
-        // �������Ȩ���ֵ
+        // Calculate the EstimatedValue
         int value = weight[0] * s + weight[1] * t + weight[2] * u;
         jNode.setEstimatedValue(value);
     }
