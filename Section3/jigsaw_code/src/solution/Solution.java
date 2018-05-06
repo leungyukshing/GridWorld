@@ -144,7 +144,7 @@ public class Solution extends Jigsaw {
         	}
         }
         // ����Ȩ��
-        int []weight = {3, 1, 2};
+        int []weight = {3, 10, 3};
         
         // �������Ȩ���ֵ
         int value = weight[0] * s + weight[1] * t + weight[2] * u;
